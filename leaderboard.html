@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Insane Leaderboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Orbitron',sans-serif;
+}
+
+body{
+  background: radial-gradient(circle at 20% 20%, #0f0f1f, #000);
+  color:white;
+  overflow-x:hidden;
+}
+
+/* Animated Background Glow */
+body::before{
+  content:"";
+  position:fixed;
+  width:200%;
+  height:200%;
+  background: conic-gradient(from 0deg,#00f5ff,#ff00c8,#00ff85,#00f5ff);
+  animation: spin 12s linear infinite;
+  opacity:0.1;
+  z-index:-1;
+}
+
+@keyframes spin{
+  100%{transform:rotate(360deg);}
+}
+
+/* Header */
+header{
+  padding:25px;
+  text-align:center;
+  font-size:28px;
+  background:rgba(10,10,25,0.8);
+  border-bottom:2px solid #00f5ff;
+  position:sticky;
+  top:0;
+  backdrop-filter: blur(10px);
+}
+
+.rank-badge{
+  margin-top:10px;
+  display:inline-block;
+  padding:10px 25px;
+  border-radius:50px;
+  font-size:14px;
+  letter-spacing:2px;
+  background:linear-gradient(45deg,#ffd700,#ff9900);
+  box-shadow:0 0 20px #ffd700;
+}
+
+/* Podium */
+.podium{
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+  gap:30px;
+  margin:60px 0;
+}
+
+.podium div{
+  width:120px;
+  text-align:center;
+  border-radius:15px;
+  padding:20px;
+  cursor:pointer;
+  transition:0.4s;
+}
+
+.podium div:hover{
+  transform:translateY(-15px) scale(1.05);
+  box-shadow:0 0 30px #00f5ff;
+}
+
+.first{height:200px;background:linear-gradient(#ffd700,#ffae00);}
+.second{height:160px;background:linear-gradient(#c0c0c0,#888);}
+.third{height:130px;background:linear-gradient(#cd7f32,#8b4513);}
+
+/* Section */
+.section{
+  margin:60px auto;
+  width:90%;
+}
+
+.section h2{
+  margin-bottom:20px;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  text-align:center;
+}
+
+.list{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:20px;
+}
+
+.card{
+  padding:15px;
+  border-radius:12px;
+  background:rgba(20,20,40,0.9);
+  border:1px solid #333;
+  transition:0.3s;
+  cursor:pointer;
+}
+
+.card:hover{
+  transform:scale(1.05);
+  border-color:#00f5ff;
+  box-shadow:0 0 20px #00f5ff;
+}
+
+/* Rank Colors */
+.diamond h2{color:#00f5ff;}
+.platinum h2{color:#b3e6ff;}
+.gold h2{color:#ffd700;}
+.shame h2{color:#ff0044;}
+
+/* Hall of Shame */
+.shame .card{
+  background:rgba(50,0,20,0.8);
+  border:1px solid #660022;
+}
+
+.shame .card:hover{
+  box-shadow:0 0 20px #ff0044;
+}
+
+/* Scroll Animation */
+.hidden{
+  opacity:0;
+  transform:translateY(50px);
+  transition:1s;
+}
+.show{
+  opacity:1;
+  transform:translateY(0);
+}
+</style>
+</head>
+<body>
+
+<header>
+  GLOBAL LEADERBOARD
+  <div class="rank-badge" id="userRank">YOUR RANK: DIAMOND</div>
+</header>
+
+<div class="podium">
+  <div class="second">🥈<br>2nd</div>
+  <div class="first">🥇<br>1st</div>
+  <div class="third">🥉<br>3rd</div>
+</div>
+
+<div class="section diamond hidden">
+  <h2>Diamond Tier</h2>
+  <div class="list" id="diamondList"></div>
+</div>
+
+<div class="section platinum hidden">
+  <h2>Platinum Tier</h2>
+  <div class="list" id="platinumList"></div>
+</div>
+
+<div class="section gold hidden">
+  <h2>Gold Tier</h2>
+  <div class="list" id="goldList"></div>
+</div>
+
+<div class="section silver hidden">
+  <h2>Silver Tier</h2>
+  <div class="list" id="silverList"></div>
+</div>
+
+<div class="section shame hidden">
+  <h2>Hall of Shame (Bronze)</h2>
+  <div class="list" id="bronzeList"></div>
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+<!-- KEEP YOUR ENTIRE ORIGINAL SCRIPT HERE -->
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyDZavFauGxUWNdbE6Gi8rP3ICuvdH2msr8",
+    authDomain: "zygolabs.firebaseapp.com",
+    projectId: "zygolabs",
+    storageBucket: "zygolabs.firebasestorage.app",
+    messagingSenderId: "825630583148",
+    appId: "1:825630583148:web:b3ae4ba05bba2e80ff6b49",
+    measurementId: "G-SL1RBXJRBQ"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+  // ────────────────────────────────────────────────
+  //   FETCH & RENDER REAL USERS + FACES NOW
+  // ────────────────────────────────────────────────
+  async function loadLeaderboard() {
+    try {
+      const snapshot = await db.collection("userRatios")
+        .orderBy("finalScore", "desc")
+        .limit(100)
+        .get();
+
+      if (snapshot.empty) {
+        console.log("nobody ascended yet KEKW");
+        showEmptyAllTiers();
+        return;
+      }
+
+      const users = [];
+      snapshot.forEach(doc => {
+        const data = doc.data();
+        users.push({
+          username: data.username || "faceless_",
+          score: data.finalScore || 0,
+          harmony: data.harmony || "?",
+          dimorphism: data.dimorphism || "?",
+          angularity: data.angularity || "?",
+          faceBase64: data.faceBase64 || ""   // ← THE MOG PROOF FIELD
+        });
+      });
+
+      users.sort((a,b) => b.score - a.score);
+
+      renderTier("diamondList", users.filter(u => u.score >= 7.5), "DIAMOND", "only gigachads here");
+renderTier("platinumList", users.filter(u => u.score >= 7.0 && u.score < 7.5), "PLATINUM", "almost chadlite");
+renderTier("goldList", users.filter(u => u.score >= 6.0 && u.score < 7.0), "GOLD", "decent normie");
+renderTier("silverList", users.filter(u => u.score >= 4.0 && u.score < 6.0), "SILVER", "truecel cope zone");
+renderTier("bronzeList", users.filter(u => u.score < 4.0), "BRONZE", "subhuman hall of shame");
+      updateMyRank(users);
+
+    } catch (err) {
+      console.error("Firestore fetch fail mogged hard:", err);
+      alert("Database mogged us bro, refresh or cry");
+    }
+  }
+
+  function renderTier(listId, tierUsers, tierName, flavorText) {
+    const container = document.getElementById(listId);
+    container.innerHTML = "";
+
+    if (tierUsers.length === 0) {
+      const empty = document.createElement("div");
+      empty.className = "card";
+      empty.innerHTML = `<strong>EMPTY</strong><br>No one ${flavorText} yet<br>ascend or rope`;
+      container.appendChild(empty);
+      return;
+    }
+
+    tierUsers.slice(0, 20).forEach((u, index) => {
+      const div = document.createElement("div");
+      div.className = "card";
+      div.innerHTML = `
+        <div style="text-align:center; margin-bottom:12px;">
+          ${
+            u.faceBase64 
+              ? `<img src="${u.faceBase64}" style="width:130px; height:130px; object-fit:cover; border-radius:50%; border:3px solid #00f5ff; box-shadow:0 0 15px rgba(0,245,255,0.5);">`
+              : `<div style="width:130px; height:130px; background:#222; border-radius:50%; margin:0 auto; display:flex; align-items:center; justify-content:center; font-size:14px; color:#555;">NO FACE</div>`
+          }
+        </div>
+        <strong>#${index+1} ${u.username}</strong><br>
+        PSL: ${u.score.toFixed(2)}<br>
+        H: ${u.harmony.toFixed(1)} | D: ${u.dimorphism.toFixed(1)} | A: ${u.angularity.toFixed(1)}
+      `;
+      container.appendChild(div);
+    });
+
+    // Fill remaining spots with cope cards
+    for (let i = tierUsers.length; i < 20; i++) {
+      const empty = document.createElement("div");
+      empty.className = "card";
+      empty.style.opacity = "0.4";
+      empty.innerHTML = `<strong>—</strong><br>no one here yet<br>cope & seethe`;
+      container.appendChild(empty);
+    }
+  }
+
+  function showEmptyAllTiers() {
+    ["diamondList","platinumList","goldList","silverList","bronzeList"].forEach(id => {
+      const c = document.getElementById(id);
+      if (c) {
+        c.innerHTML = '<div class="card"><strong>EMPTY</strong><br>no users in database<br>first one mogs</div>';
+      }
+    });
+  }
+
+  function updateMyRank(allUsers) {
+    const badge = document.getElementById("userRank");
+    if (!badge) return;
+
+    if (allUsers.length === 0) {
+      badge.innerText = "YOUR RANK: ROPE";
+      return;
+    }
+
+    // Change this to your actual username u use when saving
+    const myUsername = "kv" || "yourusernamehere"; // ← PUT YOUR REAL USERNAME HERE BRO
+    const myPos = allUsers.findIndex(u => u.username === myUsername);
+    
+    if (myPos !== -1) {
+      badge.innerText = `YOUR RANK: #${myPos+1} (${allUsers[myPos].score.toFixed(2)})`;
+      badge.style.background = "linear-gradient(45deg, #00f5ff, #ff00c8)";
+      badge.style.boxShadow = "0 0 25px #00f5ff";
+    } else {
+      badge.innerText = "NULL";
+    }
+  }
+
+  // ────────────────────────────────────────────────
+  //   START THE MOGGING
+  // ────────────────────────────────────────────────
+  window.addEventListener("load", loadLeaderboard);
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add("show");
+    });
+  });
+  document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+
+  document.getElementById("userRank")?.addEventListener("click", () => {
+    const ranks = ["ROPE","BRONZE","SILVER","GOLD","PLATINUM","DIAMOND","GOD"];
+    let random = ranks[Math.floor(Math.random()*ranks.length)];
+    document.getElementById("userRank").innerText = "YOUR RANK: " + random + " (fake)";
+  });
+</script>
+</body>
+</html>

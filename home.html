@@ -1,0 +1,3708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zygolabs</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+
+
+
+<style>
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top left,#0e1625,#05080f 70%);
+  color:white;
+  overflow-x:hidden;
+}
+/* Smooth scroll */
+
+
+
+
+/* GRID BACKGROUND */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 0, 0, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
+  transform: perspective(600px) rotateX(60deg);
+  transform-origin: top;
+  z-index: -1;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 80px;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+nav a {
+  margin-right: 28px;
+  text-decoration: none;
+  color: #aaa;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: white;
+}
+
+.nav-btn {
+  background: #2f6cff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: #1d4ed8;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 80px;
+}
+
+.hero-left {
+  max-width: 550px;
+}
+
+.badge {
+  background: rgba(255,255,255,0.05);
+  padding: 10px 16px;
+  border-radius: 30px;
+  display: inline-block;
+  margin-bottom: 30px;
+  color: #ccc;
+  font-size: 14px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: #2f6cff;
+}
+
+.hero p {
+  color: #aaa;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.buttons button {
+  padding: 14px 22px;
+  border-radius: 10px;
+  border: none;
+  margin-right: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: #2f6cff;
+  color: white;
+  box-shadow: 0 0 20px rgba(47,108,255,0.4);
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 1px solid #444;
+  color: #ccc;
+}
+
+/* RIGHT SIDE */
+.hero-right {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.face-placeholder {
+  width: 320px;
+  height: 420px;
+  background: linear-gradient(145deg, #111, #1a1a1a);
+  border-radius: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  font-weight: 600;
+  font-size: 18px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.8);
+}
+
+/* METRIC CARDS */
+.metric-card {
+  position: absolute;
+  background: rgba(20, 20, 30, 0.9);
+  padding: 16px 20px;
+  border-radius: 14px;
+  font-size: 14px;
+  color: #bbb;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.metric-card strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 20px;
+  color: white;
+}
+
+.metric-card.top {
+  top: 40px;
+  right: 0;
+}
+
+.metric-card.bottom {
+  bottom: 60px;
+  left: 0;
+}
+
+.score {
+  color: #ff4d4d;
+}
+.hero-right {
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+
+#face3d {
+  width: 100%;
+  height: 500px;
+}
+/* ---------- NAVBAR ---------- */
+
+.navbar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 60px;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,215,120,0.2);
+}
+
+.logo {
+  font-size:22px;
+  font-weight:700;
+  letter-spacing:2px;
+  background:linear-gradient(90deg,#ffd86b,#ffb700);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.nav-links a {
+  margin-left:30px;
+  text-decoration:none;
+  color:#ccc;
+  font-size:14px;
+  transition:0.3s;
+}
+
+.nav-links a:hover {
+  color:#ffd86b;
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+  text-align:center;
+  padding:70px 20px 40px;
+}
+
+.hero h1 {
+  font-size:64px;
+  letter-spacing:4px;
+  background:linear-gradient(90deg,#ffffff,#ffd86b);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero p {
+  margin-top:15px;
+  font-size:18px;
+  color:#aaa;
+}
+
+/* ---------- CONTAINER ---------- */
+
+.container {
+  max-width:1300px;
+  margin:auto;
+  padding:30px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+/* ---------- CARD ---------- */
+
+.card {
+  background:rgba(15,25,45,0.6);
+  border:1px solid rgba(255,215,120,0.15);
+  border-radius:20px;
+  padding:30px;
+  backdrop-filter:blur(20px);
+  box-shadow:0 0 40px rgba(255,215,120,0.05);
+  transition:0.4s;
+}
+
+.card:hover {
+  box-shadow:0 0 60px rgba(255,215,120,0.2);
+  transform:translateY(-5px);
+}
+
+/* ---------- BUTTONS ---------- */
+
+button {
+  padding:12px 28px;
+  background:linear-gradient(90deg,#ffd86b,#ffb700);
+  color:black;
+  border:none;
+  border-radius:12px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+  margin-top:15px;
+}
+
+button:hover {
+  transform:scale(1.05);
+  box-shadow:0 0 20px rgba(255,215,120,0.6);
+}
+
+/* ---------- CANVAS ---------- */
+
+canvas {
+  width:100%;
+  border-radius:15px;
+  margin-top:20px;
+  box-shadow:0 0 25px rgba(0,0,0,0.5);
+}
+
+/* ---------- INSTRUCTIONS ---------- */
+
+#instructions {
+  margin-top:20px;
+  padding:15px;
+  border-radius:12px;
+  background:rgba(255,183,0,0.1);
+  border:1px solid rgba(255,183,0,0.4);
+  color:#ffd86b;
+}
+
+/* ---------- PROGRESS ---------- */
+
+#progress {
+  height:8px;
+  background:#1a1f2e;
+  border-radius:5px;
+  margin-top:15px;
+}
+
+#progress-bar {
+  height:100%;
+  width:0%;
+  border-radius:5px;
+  background:linear-gradient(90deg,#ffd86b,#ffb700);
+  transition:width 0.4s;
+}
+
+/* ---------- METRICS ---------- */
+
+#metrics {
+  margin-top:20px;
+  font-size:14px;
+  line-height:1.8;
+}
+
+.slider-box {
+  margin:18px 0;
+}
+
+.slider-track {
+  position:relative;
+  height:14px;
+  border-radius:8px;
+  overflow:hidden;
+  background:#1a1f2e;
+}
+
+.slider-track div:first-child {
+  height:100%;
+  background:linear-gradient(to right,#ff3d3d,#ffae00,#00ff6a,#ffae00,#ff3d3d);
+}
+
+.slider-marker {
+  position:absolute;
+  top:-8px;
+  width:6px;
+  height:30px;
+  background:white;
+  border-radius:3px;
+  box-shadow:0 0 10px #ffd86b;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: white;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+/* ---------- SURGERY PANEL ---------- */
+
+/* Surgery section – the "ur face is over" warning panel */
+#surgery {
+    margin: 35px auto;
+    padding: 25px 30px;
+    max-width: 900px;
+    background: linear-gradient(135deg, #1a0000 0%, #220000 50%, #1a0000 100%);
+    border: 2px solid #ff1a1a;
+    border-radius: 16px;
+    box-shadow: 
+        0 0 25px rgba(255, 30, 30, 0.45),
+        inset 0 0 15px rgba(255, 0, 0, 0.15);
+    color: #ffdddd;
+    position: relative;
+    overflow: hidden;
+    animation: surgeryPulse 4s infinite alternate ease-in-out;
+}
+
+/* subtle breathing red glow like ur heart rate when u see ur FWHR in side profile */
+@keyframes surgeryPulse {
+    0%   { box-shadow: 0 0 25px rgba(255, 30, 30, 0.45); }
+    100% { box-shadow: 0 0 45px rgba(255, 60, 60, 0.7); }
+}
+
+/* inner glow + scanline cope for extra doomer aesthetic */
+#surgery::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(255,0,0,0.08) 50%,
+        transparent 100%
+    );
+    pointer-events: none;
+    animation: scanLine 8s linear infinite;
+}
+
+@keyframes scanLine {
+    0%   { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+/* header inside surgery section (h3 or whatever) */
+#surgery h3 {
+    color: #ff4444;
+    text-shadow: 0 0 10px #ff0000;
+    margin: 0 0 20px 0;
+    font-size: 1.6em;
+    letter-spacing: 1px;
+    text-align: center;
+    border-bottom: 1px dashed #ff3333;
+    padding-bottom: 12px;
+}
+
+/* the actual surgery list items – make em pop like failo callouts */
+#surgery ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#surgery li {
+    background: rgba(40, 0, 0, 0.6);
+    margin: 12px 0;
+    padding: 16px 20px;
+    border-radius: 10px;
+    border-left: 5px solid #ff4444;
+    transition: all 0.3s ease;
+    transform: translateX(-8px);
+    opacity: 0.92;
+}
+
+#surgery li:hover {
+    transform: translateX(0) scale(1.03);
+    background: rgba(60, 0, 0, 0.85);
+    box-shadow: 0 0 20px rgba(255, 50, 50, 0.6);
+    color: white;
+}
+
+/* surgery count flex roaster */
+#surgery .surgery-count {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #ff6666;
+    margin-top: 20px;
+    text-shadow: 0 0 8px #ff0000;
+    animation: countBlink 2s infinite;
+}
+
+@keyframes countBlink {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.6; }
+}
+
+/* emergency halo case – make it less depressing lol */
+#surgery li.halo {
+    background: rgba(0, 40, 0, 0.6);
+    border-left: 5px solid #44ff44;
+    color: #ccffcc;
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer {
+  text-align:center;
+  padding:40px;
+  color:#555;
+  font-size:13px;
+}
+
+@media(max-width:900px){
+  .container {
+    grid-template-columns:1fr;
+  }
+  .hero h1 {
+    font-size:42px;
+  }
+}
+.appeal-container {
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.appeal-container input,
+.appeal-container select {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 6px;
+}
+.metric-modal {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  background:rgba(0,0,0,0.85);
+  backdrop-filter:blur(8px);
+  z-index:9999;
+}
+
+.metric-box {
+  width:650px;
+  max-width:95%;
+  background:rgba(15,25,45,0.95);
+  border-radius:20px;
+  padding:30px;
+  border:1px solid rgba(255,215,120,0.4);
+  box-shadow:0 0 50px rgba(255,215,120,0.3);
+}
+
+#closeMetric {
+  float:right;
+  font-size:26px;
+  cursor:pointer;
+  color:#ffd86b;
+}
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.secondaryScores {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.scoreCard {
+  flex: 1;
+  background: #111;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  color: #fff;
+}
+
+.scoreCard h3 {
+  margin-bottom: 8px;
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.scoreCard span {
+  font-size: 28px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.miniBar {
+  width: 100%;
+  height: 8px;
+  background: #222;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.miniFill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #00ff88, #00ccff);
+  transition: width 0.4s ease;
+}
+.rating-card {
+  background: #111;
+  color: #fff;
+  width: 380px;
+  padding: 25px;
+  border-radius: 20px;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.top-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.rating-box {
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.rating-box.large {
+  flex: 1;
+}
+
+.label {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.score {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 8px 0;
+}
+
+.bar {
+  height: 6px;
+  background: #2a2a2a;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #00ff99, #00ccff);
+  border-radius: 6px;
+  transition: width 0.6s ease;
+}
+.leaderboard-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #111;
+  border-radius: 20px;
+  color: white;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.leaderboard-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.podium {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.podium-item {
+  width: 120px;
+  text-align: center;
+  border-radius: 15px;
+  padding: 15px;
+  font-weight: bold;
+}
+
+.first {
+  height: 180px;
+  background: gold;
+  color: black;
+}
+
+.second {
+  height: 140px;
+  background: silver;
+  color: black;
+}
+
+.third {
+  height: 120px;
+  background: #cd7f32;
+  color: black;
+}
+
+.rank {
+  font-size: 24px;
+}
+
+.username {
+  margin-top: 10px;
+}
+
+.score {
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+.rank-list {
+  margin-top: 20px;
+}
+
+.rank-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  margin-bottom: 8px;
+  background: #1c1c1c;
+  border-radius: 10px;
+}
+
+.rank-row:nth-child(odd) {
+  background: #222;
+}
+body::before{
+  content:"";
+  position:fixed;
+  width:200%;
+  height:200%;
+  background: conic-gradient(from 0deg,#00f5ff,#ff00c8,#00ff85,#00f5ff);
+  animation: spin 12s linear infinite;
+  opacity:0.1;
+  z-index:-1;
+}
+
+@keyframes spin{
+  100%{transform:rotate(360deg);}
+}
+
+/* Header */
+header{
+  padding:25px;
+  text-align:center;
+  font-size:28px;
+  background:rgba(10,10,25,0.8);
+  border-bottom:2px solid #00f5ff;
+  position:sticky;
+  top:0;
+  backdrop-filter: blur(10px);
+}
+
+.rank-badge{
+  margin-top:10px;
+  display:inline-block;
+  padding:10px 25px;
+  border-radius:50px;
+  font-size:14px;
+  letter-spacing:2px;
+  background:linear-gradient(45deg,#ffd700,#ff9900);
+  box-shadow:0 0 20px #ffd700;
+}
+
+/* Podium */
+.podium{
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+  gap:30px;
+  margin:60px 0;
+}
+
+.podium div{
+  width:120px;
+  text-align:center;
+  border-radius:15px;
+  padding:20px;
+  cursor:pointer;
+  transition:0.4s;
+}
+
+.podium div:hover{
+  transform:translateY(-15px) scale(1.05);
+  box-shadow:0 0 30px #00f5ff;
+}
+
+.first{height:200px;background:linear-gradient(#ffd700,#ffae00);}
+.second{height:160px;background:linear-gradient(#c0c0c0,#888);}
+.third{height:130px;background:linear-gradient(#cd7f32,#8b4513);}
+
+/* Section */
+.section{
+  margin:60px auto;
+  width:90%;
+}
+
+.section h2{
+  margin-bottom:20px;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  text-align:center;
+}
+
+.list{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:20px;
+}
+
+.card{
+  padding:15px;
+  border-radius:12px;
+  background:rgba(20,20,40,0.9);
+  border:1px solid #333;
+  transition:0.3s;
+  cursor:pointer;
+}
+
+.card:hover{
+  transform:scale(1.05);
+  border-color:#00f5ff;
+  box-shadow:0 0 20px #00f5ff;
+}
+
+/* Rank Colors */
+.diamond h2{color:#00f5ff;}
+.platinum h2{color:#b3e6ff;}
+.gold h2{color:#ffd700;}
+.shame h2{color:#ff0044;}
+
+/* Hall of Shame */
+.shame .card{
+  background:rgba(50,0,20,0.8);
+  border:1px solid #660022;
+}
+
+.shame .card:hover{
+  box-shadow:0 0 20px #ff0044;
+}
+
+/* Scroll Animation */
+.hidden{
+  opacity:0;
+  transform:translateY(50px);
+  transition:1s;
+}
+.show{
+  opacity:1;
+  transform:translateY(0);
+}
+/* Hide default scrollbar */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar - Firefox */
+html, body {
+  scrollbar-width: none;
+  -ms-overflow-style: none; /* IE/Edge old */
+}
+
+/* Container track */
+.scroll-container {
+  position: fixed;
+  right: 20px;
+  top: 10%;
+  width: 10px;
+  height: 80vh;
+  background: rgba(255,255,255,0.05);
+  border-radius: 100px;
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+}
+
+/* Growing fill */
+.scroll-fill {
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(180deg, #00f0ff, #8b5cf6);
+  border-radius: 100px;
+  position: absolute;
+  bottom: 0;
+  transition: height 0.1s ease-out;
+  box-shadow:
+    0 0 15px rgba(139,92,246,0.7),
+    0 0 25px rgba(0,240,255,0.5);
+}
+
+/* Face at bottom */
+.scroll-face {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 22px;
+  transition: transform 0.2s ease;
+}
+
+</style>
+</head>
+
+<body>
+
+  <div id="home11">
+  <div class="grid-bg"></div>
+
+  <header class="navbar">
+    <div class="logo">ZygoLabs</div>
+    <div class="visitor-counter">
+  Users Rated: <span id="visitorCount">Loading...</span>
+</div>
+    <nav>
+      <button class="nav-btn"id="homeBtn">Get Started</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+
+    <div class="hero-left">
+
+      <div class="badge">
+        ⭐ 4.8/5 • 1000+ users
+      </div>
+
+      <h1>
+        Beauty Can <span>Be Measured</span>
+      </h1>
+
+      <p>
+        30+ advanced facial metrics with personalized improvement insights
+        and harmony scoring.
+      </p>
+
+      <div class="buttons">
+        <button class="primary-btn"id="homeBtn2">Start Analysis →</button>
+        
+      </div>
+
+      <div class="scroll-container">
+  <div class="scroll-fill">
+    <div class="scroll-face">😎</div>
+  </div>
+</div>
+    </div>
+
+  <div class="hero-right">
+ <img src="https://i.pinimg.com/736x/2c/d2/bb/2cd2bba664f923e037f775d4259f0d97.jpg"style='width:200px;height:350px;'>
+
+  <div class="metric-card top">
+    Harmony
+    <strong>87%</strong>
+  </div>
+
+  <div class="metric-card bottom">
+    Overall Score
+    <strong class="score">8.15 / 10</strong>
+  </div>
+</div>
+
+  </section>
+  </div>
+
+  <div id="home2"style='display:none;'>
+<div class="navbar">
+  <div class="logo">ZYGO LABS</div>
+  <div class="nav-links">
+    <a href="#">Leaderboard</a>
+    <a href="#">Forum</a>
+    <a href="#">Login</a>
+  </div>
+</div>
+
+<div class="hero">
+  <h1 style="position:relative;left:110px;">ZYGO LABS</h1>
+  <p>The Most Accurate Face Rating System</p>
+</div>
+
+<div class="container">
+
+  <div class="card"id='lul'>
+    <h2>Upload & Mark</h2>
+    <input type="file" id="upload" accept="image/*">
+    <button id="startBtn" style="display:none;">Start Placing Points</button>
+    <canvas id="canvas"></canvas>
+    <div id="instructions">Upload your pic first...</div>
+    <div id="progress"><div id="progress-bar"></div></div>
+    <button id="undoBtn" style="display:none;">Undo Last</button>
+    <button id="resetBtn" style="display:none;">Reset</button>
+
+   <center> <div class="rating-card">
+
+  <h2 class="title">Your Ratings</h2>
+
+  <div class="top-row">
+    <div class="rating-box large">
+      <span class="label">Overall</span>
+      <span class="score" id="overallCard"></span>
+      <div class="bar"><div class="fill" id="overallBar"></div></div>
+    </div>
+
+   
+  </div>
+
+  <div class="grid">
+    <div class="rating-box">
+      <span class="label">Jawline</span>
+      <span class="score" id="jawlineCard"></span>
+      <div class="bar"><div class="fill" id="jawlineBar"></div></div>
+    </div>
+
+    <div class="rating-box">
+      <span class="label">Cheekbones</span>
+      <span class="score" id="cheekboneCard"></span>
+      <div class="bar"><div class="fill" id="cheekboneBar"></div></div>
+    </div>
+
+    <div class="rating-box">
+      <span class="label">Harmony</span>
+      <span class="score" id="harmonyCard"></span>
+      <div class="bar"><div class="fill" id="harmonyBar2"></div></div>
+    </div>
+
+    <center><div class="rating-box"style='left:80px;position: relative;'>
+      <span class="label">Masculinity</span>
+      <span class="score" id="masculinityCard"></span>
+      <div class="bar"><div class="fill" id="masculinityBar"></div></div>
+    </div></center>
+  </div>
+
+</div></center>
+  </div>
+ 
+
+  <div class="card">
+    <h2>Analysis Results</h2>
+    <div id="metrics"></div>
+    <canvas id="graph" width="650" height="260"></canvas>
+    <div id="surgery"></div>
+    
+  </div>
+
+  <div class="secondaryScores">
+
+  <div class="scoreCard">
+    <h3>Harmony</h3>
+    <span id="harmonyScore">0.00</span>
+    <div class="miniBar">
+      <div id="harmonyBar" class="miniFill"></div>
+    </div>
+  </div>
+
+  <div class="scoreCard">
+    <h3>Dimorphism</h3>
+    <span id="dimorphismScore">0.00</span>
+    <div class="miniBar">
+      <div id="dimorphismBar" class="miniFill"></div>
+    </div>
+  </div>
+
+  <div class="scoreCard">
+    <h3>Angularity</h3>
+    <span id="angularityScore">0.00</span>
+    <div class="miniBar">
+      <div id="angularityBar" class="miniFill"></div>
+    </div>
+  </div>
+
+</div>
+
+
+   <div class="appeal-container">
+  <h3>Total Appeal Calculator</h3>
+
+  <input type="number" id="heightInput" placeholder="Height (cm)" />
+
+  <select id="bodyType">
+    <option value="skinny">Skinny</option>
+    <option value="lean">Lean</option>
+    <option value="aesthetic">Aesthetic</option>
+    <option value="supermuscular">Super Muscular</option>
+    <option value="skinnyfat">Skinny Fat</option>
+    <option value="fat">Fat</option>
+  </select>
+
+  <input type="number" id="socialInput" placeholder="Social Skills (1-10)" min="1" max="10" />
+  <input type="number" id="moneyInput" placeholder="Money Level (1-10)" min="1" max="10" />
+
+  <button onclick="calculateAppeal()">Calculate Appeal</button>
+
+  <div id="appealResult"></div>
+</div>
+<div id="metricModal" class="metric-modal">
+  <div class="metric-box">
+    <span id="closeMetric">&times;</span>
+    <h2 id="metricTitle"></h2>
+    <p id="metricValue"></p>
+    <p id="metricPercentile"></p>
+    <div id="metricDescription"></div>
+    <canvas id="miniGraph" width="450" height="220"></canvas>
+  </div>
+</div>
+</div>
+</div>
+<div class="leaderboard-container"style='display:none;'>
+  <h1 class="leaderboard-title">Global Leaderboard</h1>
+
+  <div class="podium">
+    <div class="podium-item second">
+      <div class="rank">2</div>
+      <div class="username" id="secondName">---</div>
+      <div class="score" id="secondScore">---</div>
+    </div>
+
+    <div class="podium-item first">
+      <div class="rank">1</div>
+      <div class="username" id="firstName">---</div>
+      <div class="score" id="firstScore">---</div>
+    </div>
+
+    <div class="podium-item third">
+      <div class="rank">3</div>
+      <div class="username" id="thirdName">---</div>
+      <div class="score" id="thirdScore">---</div>
+    </div>
+  </div>
+
+  <div class="rank-list" id="rankList"></div>
+</div>
+
+<div class="footer">
+© 2026 changfrommumbai
+</div>
+
+<header>
+  GLOBAL LEADERBOARD
+  <div class="rank-badge" id="userRank">YOUR RANK: DIAMOND</div>
+</header>
+
+<div class="podium">
+  <div class="second">🥈<br>2nd</div>
+  <div class="first">🥇<br>1st</div>
+  <div class="third">🥉<br>3rd</div>
+</div>
+
+<div class="section diamond hidden">
+  <h2>Diamond Tier</h2>
+  <div class="list" id="diamondList"></div>
+</div>
+
+<div class="section platinum hidden">
+  <h2>Platinum Tier</h2>
+  <div class="list" id="platinumList"></div>
+</div>
+
+<div class="section gold hidden">
+  <h2>Gold Tier</h2>
+  <div class="list" id="goldList"></div>
+</div>
+
+<div class="section silver hidden">
+  <h2>Silver Tier</h2>
+  <div class="list" id="silverList"></div>
+</div>
+
+<div class="section shame hidden">
+  <h2>Hall of Shame (Bronze)</h2>
+  <div class="list" id="bronzeList"></div>
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+<!-- KEEP YOUR ENTIRE ORIGINAL SCRIPT HERE -->
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+
+
+
+ 
+ 
+
+
+ <script type="module">
+
+
+import * as THREE from 'https://cdn.skypack.dev/three@0.158.0';
+import { OrbitControls } from 'https://cdn.skypack.dev/three@0.158.0/examples/jsm/controls/OrbitControls.js';
+
+const container = document.getElementById("face3d");
+
+const scene = new THREE.Scene();
+
+const camera = new THREE.PerspectiveCamera(
+  40,
+  container.clientWidth / container.clientHeight,
+  0.1,
+  1000
+);
+camera.position.set(0, 0, 6);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+renderer.setSize(container.clientWidth, container.clientHeight);
+renderer.setPixelRatio(window.devicePixelRatio);
+container.appendChild(renderer.domElement);
+
+/* CONTROLS */
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableZoom = false;
+controls.enablePan = false;
+controls.enableDamping = true;
+
+/* LIGHTING */
+scene.add(new THREE.AmbientLight(0xffffff, 0.6));
+
+const keyLight = new THREE.DirectionalLight(0xffffff, 1.2);
+keyLight.position.set(5, 5, 5);
+scene.add(keyLight);
+
+const rimLight = new THREE.DirectionalLight(0x66aaff, 1);
+rimLight.position.set(-5, 2, -5);
+scene.add(rimLight);
+
+/* HEAD GROUP */
+const headGroup = new THREE.Group();
+scene.add(headGroup);
+
+/* HEAD */
+const headGeometry = new THREE.SphereGeometry(1.5, 128, 128);
+const headMaterial = new THREE.MeshStandardMaterial({
+  color: 0xe2c2a6,
+  roughness: 0.5,
+  metalness: 0.1
+});
+
+const head = new THREE.Mesh(headGeometry, headMaterial);
+head.scale.set(1, 1.2, 1);
+headGroup.add(head);
+
+/* JAW */
+const jawGeometry = new THREE.BoxGeometry(1.6, 1, 1.6);
+const jaw = new THREE.Mesh(jawGeometry, headMaterial);
+jaw.position.y = -1.5;
+jaw.scale.set(0.8, 0.8, 0.8);
+headGroup.add(jaw);
+
+/* EYES */
+const eyeGeometry = new THREE.SphereGeometry(0.18, 64, 64);
+const eyeMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff });
+
+const leftEye = new THREE.Mesh(eyeGeometry, eyeMaterial);
+leftEye.position.set(-0.5, 0.3, 1.25);
+
+const rightEye = new THREE.Mesh(eyeGeometry, eyeMaterial);
+rightEye.position.set(0.5, 0.3, 1.25);
+
+headGroup.add(leftEye);
+headGroup.add(rightEye);
+
+/* PUPILS */
+const pupilGeometry = new THREE.SphereGeometry(0.08, 32, 32);
+const pupilMaterial = new THREE.MeshStandardMaterial({ color: 0x111111 });
+
+const leftPupil = new THREE.Mesh(pupilGeometry, pupilMaterial);
+leftPupil.position.set(-0.5, 0.3, 1.4);
+
+const rightPupil = new THREE.Mesh(pupilGeometry, pupilMaterial);
+rightPupil.position.set(0.5, 0.3, 1.4);
+
+headGroup.add(leftPupil);
+headGroup.add(rightPupil);
+
+/* NOSE */
+const noseGeometry = new THREE.ConeGeometry(0.15, 0.5, 32);
+const nose = new THREE.Mesh(noseGeometry, headMaterial);
+nose.position.set(0, 0, 1.4);
+nose.rotation.x = Math.PI;
+headGroup.add(nose);
+
+/* MOUTH */
+const mouthGeometry = new THREE.BoxGeometry(0.8, 0.08, 0.05);
+const mouthMaterial = new THREE.MeshStandardMaterial({ color: 0x663333 });
+
+const mouth = new THREE.Mesh(mouthGeometry, mouthMaterial);
+mouth.position.set(0, -0.6, 1.35);
+headGroup.add(mouth);
+
+/* LOOP */
+function animate() {
+  requestAnimationFrame(animate);
+  controls.update();
+  renderer.render(scene, camera);
+}
+animate();
+
+/* RESPONSIVE */
+window.addEventListener("resize", () => {
+  camera.aspect = container.clientWidth / container.clientHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(container.clientWidth, container.clientHeight);
+});
+
+
+</script>
+
+<!-- MediaPipe Core -->
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+<!-- Firebase 8.0.1 -->
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+<!-- KEEP YOUR ENTIRE ORIGINAL SCRIPT HERE -->
+<script>
+/* PASTE YOUR EXACT ORIGINAL JS HERE */
+/* DO NOT MODIFY ANYTHING INSIDE */
+  var firebaseConfig = {
+ apiKey: "AIzaSyDZavFauGxUWNdbE6Gi8rP3ICuvdH2msr8",
+  authDomain: "zygolabs.firebaseapp.com",
+  projectId: "zygolabs",
+  storageBucket: "zygolabs.firebasestorage.app",
+  messagingSenderId: "825630583148",
+  appId: "1:825630583148:web:b3ae4ba05bba2e80ff6b49",
+  measurementId: "G-SL1RBXJRBQ"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  var db = firebase.firestore();
+ var counterRef = db.collection("siteStats").doc("visits");
+
+  function updateCounter() {
+    counterRef.get().then(function(doc) {
+      if (doc.exists) {
+        counterRef.update({
+          count: firebase.firestore.FieldValue.increment(1)
+        }).then(loadUpdated);
+      } else {
+        counterRef.set({ count: 1 }).then(loadUpdated);
+      }
+    });
+  }
+
+  function loadUpdated() {
+    counterRef.get().then(function(doc) {
+      document.getElementById("visitorCount").innerText = doc.data().count;
+    });
+  }
+
+  updateCounter();
+  window.addEventListener("scroll", () => {
+  const scrollFill = document.querySelector(".scroll-fill");
+
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+  const scrollPercent = (scrollTop / docHeight) * 100;
+
+  scrollFill.style.height = scrollPercent + "%";
+});
+
+
+const upload = document.getElementById("upload");
+const startBtn = document.getElementById("startBtn");
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+const instructions = document.getElementById("instructions");
+const progressBar = document.getElementById("progress-bar");
+const metrics = document.getElementById("metrics");
+const graph = document.getElementById("graph");
+const gctx = graph.getContext("2d");
+const surgeryDiv = document.getElementById("surgery");
+const undoBtn = document.getElementById("undoBtn");
+
+// check this in F12 console
+
+
+const resetBtn = document.getElementById("resetBtn");
+
+let img = null;
+let points = [];
+let currentMarker = 0;
+
+document.getElementById("homeBtn").addEventListener("click", function () {
+  document.getElementById('home2').style.display = 'block';
+  document.getElementById('home11').style.display = 'none';
+});
+document.getElementById("homeBtn2").addEventListener("click", function () {
+  document.getElementById('home2').style.display = 'block';
+  document.getElementById('home11').style.display = 'none';
+});
+
+
+
+const markerLabels = [
+
+"1. Bottom of your chin (lowest point)",
+"2. Farthest left point of your cheekbone",
+"3. Farthest right point of your cheekbone",
+"4. Spot right between your eyebrows",
+"5. Where your nose meets your upper lip",
+"6. Center of your left eye (pupil)",
+"7. Center of your right eye (pupil)",
+"8. Outer corner of your left eye",
+"9. Inner corner of your left eye",
+"10. Outer corner of your right eye",
+"11. Inner corner of your right eye",
+"12. Middle top of your upper lip",
+"13. Top of the groove under your nose",
+"14. Highest point of your left eyebrow",
+"15. Highest point of your right eyebrow",
+"16. Tip of your nose (most forward point)",
+"17. Left corner of your mouth",
+"18. Right corner of your mouth",
+"19. Middle of your left upper eyelid",
+"20. Middle of your left lower eyelid",
+"21. Middle of your right upper eyelid",
+"22. Middle of your right lower eyelid",
+"23. Outer base of your left nostril",
+"24. Outer base of your right nostril",
+"25. Left jaw angle (corner near ear)",
+"26. Right jaw angle (corner near ear)",
+"27. Top of your nose bridge (between eyes)",
+"28. Left cheek hollow (under cheekbone)",
+"29. Right cheek hollow (under cheekbone)",
+"30. Center of your forehead (if visible)",
+"31. Left ear top attachment",
+"32. Right ear top attachment",
+"33. Left lip height point (middle)",
+"34. Right lip height point (middle)",
+
+/* NEW ONES */
+
+"35. Bottom of left eyebrow",
+"36. Bottom of right eyebrow",
+"37. Hairline center (top of forehead)",
+"38. Left edge of chin (widest part)",
+"39. Right edge of chin (widest part)"
+
+];
+const idealRanges = {
+FWHR: {min:1.871, max:1.95}, // centered ~1.948
+midface: {min:0.85, max:0.98}, // centered ~0.890
+ESR: {min:0.40, max:0.55}, // ~0.457
+chinPhil: {min:4, max:5}, // centered ~2.631
+canthalTilt: {min:89, max:96}, // ignore the -89 bug, force positive range
+eyeAspect: {min:1.95, max:2.2}, // centered ~3.0 (your 1.23 is bugged, ignore)
+lowerThirdPct: {min:40, max:45}, // centered ~40.714
+cheekboneRatio: {min:1, max:1.15}, // centered ~1.155
+intercanthalRatio: {min:2.7, max:3.4},
+eyeToFaceWidth: {min:0.22, max:0.28},
+noseToFaceWidth: {min:0.20, max:0.26},
+mouthToFaceWidth: {min:0.37, max:0.5},
+jawToCheekbone: {min:0.80, max:0.95},
+philtrumRatio: {min:0.25, max:0.35},
+lipHeightRatio: {min:0.18, max:0.30},
+eyeSpacingRatio: {min:0.40, max:0.51},
+chinHeightRatio: {min:0.35, max:0.45},
+symmetry: {min:0.0, max:0.03},
+ earFlareRatio: {min:1.05, max:1.20},
+  browThicknessRatio: {min:0.045, max:0.15},
+  browEyeRatio: {min:0.20, max:0.30},
+  noseProjectionRatio: {min:0.20, max:0.30},
+  mandibleAngleRatio: {min:0.65, max:0.5},
+  lowerFaceWidthRatio: {min:0.80, max:0.95},
+  foreheadHeightRatio: {min:0.40, max:0.550},
+  browSymmetryRatio: {min:0.0, max:0.02},
+  eyeVerticalRatio: {min:0.45, max:0.65},
+  noseLengthRatio: {min:0.25, max:0.35},
+  mouthHeightRatio: {min:0.08, max:0.15},
+  cupidBowRatio: {min:0.02, max:0.06},
+  infraorbitalRatio: {min:0.40, max:0.55},
+  cheekHollowRatio: {min:0.30, max:0.40},
+  chinWidthRatio: {min:0.20, max:0.35},
+  compactnessRatio: {min:0.85, max:1.05},
+  eyeTiltSymmetryRatio: {min:160, max:175},
+  jawCurveRatio: {min:0.60, max:0.75},
+  orbitalWidthRatio: {min:0.22, max:0.30},
+  browRidgeRatio: {min:0.494, max:0.550}
+};
+
+// Fix insane tilt bug
+
+
+  async function loadLeaderboard2() {
+    try {
+      const snapshot = await db.collection("userRatios")
+        .orderBy("finalScore", "desc")
+        .limit(100)
+        .get();
+
+      if (snapshot.empty) {
+        console.log("nobody ascended yet KEKW");
+        showEmptyAllTiers();
+        return;
+      }
+
+      const users = [];
+      snapshot.forEach(doc => {
+        const data = doc.data();
+        users.push({
+          username: data.username || "faceless_",
+          score: data.finalScore || 0,
+          harmony: data.harmony || "?",
+          dimorphism: data.dimorphism || "?",
+          angularity: data.angularity || "?",
+          faceBase64: data.faceBase64 || ""   // ← THE MOG PROOF FIELD
+        });
+      });
+
+      users.sort((a,b) => b.score - a.score);
+
+      renderTier("diamondList", users.filter(u => u.score >= 7.5), "DIAMOND", "only gigachads here");
+renderTier("platinumList", users.filter(u => u.score >= 7.0 && u.score < 7.5), "PLATINUM", "almost chadlite");
+renderTier("goldList", users.filter(u => u.score >= 6.0 && u.score < 7.0), "GOLD", "decent normie");
+renderTier("silverList", users.filter(u => u.score >= 4.0 && u.score < 6.0), "SILVER", "truecel cope zone");
+renderTier("bronzeList", users.filter(u => u.score < 4.0), "BRONZE", "subhuman hall of shame");
+      updateMyRank(users);
+
+    } catch (err) {
+      console.error("Firestore fetch fail mogged hard:", err);
+      alert("Database mogged us bro, refresh or cry");
+    }
+  }
+
+  function renderTier(listId, tierUsers, tierName, flavorText) {
+    const container = document.getElementById(listId);
+    container.innerHTML = "";
+
+    if (tierUsers.length === 0) {
+      const empty = document.createElement("div");
+      empty.className = "card";
+      empty.innerHTML = `<strong>EMPTY</strong><br>No one ${flavorText} yet<br>ascend or rope`;
+      container.appendChild(empty);
+      return;
+    }
+
+    tierUsers.slice(0, 20).forEach((u, index) => {
+      const div = document.createElement("div");
+      div.className = "card";
+      div.innerHTML = `
+        <div style="text-align:center; margin-bottom:12px;">
+          ${
+            u.faceBase64 
+              ? `<img src="${u.faceBase64}" style="width:130px; height:130px; object-fit:cover; border-radius:50%; border:3px solid #00f5ff; box-shadow:0 0 15px rgba(0,245,255,0.5);">`
+              : `<div style="width:130px; height:130px; background:#222; border-radius:50%; margin:0 auto; display:flex; align-items:center; justify-content:center; font-size:14px; color:#555;">NO FACE</div>`
+          }
+        </div>
+        <strong>#${index+1} ${u.username}</strong><br>
+        PSL: ${u.score.toFixed(2)}<br>
+        H: ${u.harmony.toFixed(1)} | D: ${u.dimorphism.toFixed(1)} | A: ${u.angularity.toFixed(1)}
+      `;
+      container.appendChild(div);
+    });
+
+    // Fill remaining spots with cope cards
+    for (let i = tierUsers.length; i < 20; i++) {
+      const empty = document.createElement("div");
+      empty.className = "card";
+      empty.style.opacity = "0.4";
+      empty.innerHTML = `<strong>—</strong><br>no one here yet<br>cope & seethe`;
+      container.appendChild(empty);
+    }
+  }
+
+  function showEmptyAllTiers() {
+    ["diamondList","platinumList","goldList","silverList","bronzeList"].forEach(id => {
+      const c = document.getElementById(id);
+      if (c) {
+        c.innerHTML = '<div class="card"><strong>EMPTY</strong><br>no users in database<br>first one mogs</div>';
+      }
+    });
+  }
+
+  function updateMyRank(allUsers) {
+    const badge = document.getElementById("userRank");
+    if (!badge) return;
+
+    if (allUsers.length === 0) {
+      badge.innerText = "YOUR RANK: ROPE";
+      return;
+    }
+
+    // Change this to your actual username u use when saving
+    const myUsername = "kv" || "yourusernamehere"; // ← PUT YOUR REAL USERNAME HERE BRO
+    const myPos = allUsers.findIndex(u => u.username === myUsername);
+    
+    if (myPos !== -1) {
+      badge.innerText = `YOUR RANK: #${myPos+1} (${allUsers[myPos].score.toFixed(2)})`;
+      badge.style.background = "linear-gradient(45deg, #00f5ff, #ff00c8)";
+      badge.style.boxShadow = "0 0 25px #00f5ff";
+    } else {
+      badge.innerText = "NULL";
+    }
+  }
+
+  // ────────────────────────────────────────────────
+  //   START THE MOGGING
+  // ────────────────────────────────────────────────
+  window.addEventListener("load", loadLeaderboard2);
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add("show");
+    });
+  });
+  document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+
+  document.getElementById("userRank")?.addEventListener("click", () => {
+    const ranks = ["ROPE","BRONZE","SILVER","GOLD","PLATINUM","DIAMOND","GOD"];
+    let random = ranks[Math.floor(Math.random()*ranks.length)];
+    document.getElementById("userRank").innerText = "YOUR RANK: " + random + " (fake)";
+  });
+
+
+
+
+function distance(a, b) { return Math.hypot(a.x - b.x, a.y - b.y); }
+function degrees(rad) { return rad * (180 / Math.PI); }
+
+function strictRangeScore(v, min, max) {
+if (v >= min && v <= max) return 1;
+const ideal = (min + max) / 2;
+const dev = Math.abs(v - ideal);
+return Math.max(0, 1 - Math.pow(dev / ((max - min) * 1.8), 1.4));
+}
+
+function sliderHTML(label, value, key) {
+
+  const r = idealRanges[key];
+  if (!r || isNaN(value)) return "";
+
+  const idealWidth = r.max - r.min;
+
+  const visualMin = r.min - idealWidth * 2;
+  const visualMax = r.max + idealWidth * 2;
+
+  const clampedValue = Math.max(visualMin, Math.min(visualMax, value));
+  const percent = ((clampedValue - visualMin) / (visualMax - visualMin)) * 100;
+
+  const idealStart = ((r.min - visualMin) / (visualMax - visualMin)) * 100;
+  const idealEnd = ((r.max - visualMin) / (visualMax - visualMin)) * 100;
+
+  let zoneColor;
+  if (value >= r.min && value <= r.max) {
+    zoneColor = "#00ff6a";
+  } else if (
+    value >= r.min - idealWidth &&
+    value <= r.max + idealWidth
+  ) {
+    zoneColor = "#ffae00";
+  } else {
+    zoneColor = "#ff3d3d";
+  }
+
+  return `
+  <div class="slider-box metric-click"
+       onclick="openMetric('${key}', ${value})"
+       style="cursor:pointer;">
+
+    <div class="slider-label">${label}</div>
+
+    <div class="slider-track" style="
+      position:relative;
+      height:16px;
+      border-radius:8px;
+      background:#1a1a1a;
+      overflow:visible;
+    ">
+
+      <div style="
+        position:absolute;
+        left:0;
+        width:100%;
+        height:100%;
+        background:linear-gradient(
+          to right,
+          #ff3d3d 0%,
+          #ffae00 25%,
+          #00ff6a 50%,
+          #ffae00 75%,
+          #ff3d3d 100%
+        );
+        border-radius:8px;
+      "></div>
+
+      <div style="
+        position:absolute;
+        left:${idealStart}%;
+        width:${idealEnd - idealStart}%;
+        height:100%;
+        background:rgba(0,255,106,0.35);
+        border-radius:8px;
+      "></div>
+
+      <div style="
+        position:absolute;
+        left:${percent}%;
+        top:50%;
+        transform:translate(-50%,-50%);
+        width:14px;
+        height:14px;
+        background:${zoneColor};
+        border-radius:50%;
+        border:2px solid white;
+        box-shadow:0 0 8px ${zoneColor};
+      "></div>
+
+    </div>
+
+    <div class="value-text">${value.toFixed(3)}</div>
+  </div>`;
+}
+function calculatePercentile(key, value) {
+  const r = idealRanges[key];
+  if (!r || value == null) return 50;
+
+  const min = r.min;
+  const max = r.max;
+
+  const idealCenter = (min + max) / 2;
+  const halfRange = (max - min) / 2;
+
+  const distance = Math.abs(value - idealCenter);
+
+  // Inside ideal range → elite
+  if (value >= min && value <= max) {
+    return 95 + (1 - (distance / halfRange)) * 4; 
+    // 95–99
+  }
+
+  // Outside ideal → drop hard
+  const penalty = distance / halfRange;
+  let percentile = 95 - (penalty * 40);
+
+  return Math.max(1, Math.min(99, percentile));
+}
+
+function getMetricExplanation(key, value) {
+
+  const r = idealRanges[key];
+  if (!r) return "No data available.";
+
+  const min = r.min;
+  const max = r.max;
+  const range = max - min;
+
+  const lowSevere = min - range;
+  const highSevere = max + range;
+
+  let severity = "ideal";
+
+  if (value < lowSevere) severity = "veryLow";
+  else if (value < min) severity = "slightlyLow";
+  else if (value > highSevere) severity = "veryHigh";
+  else if (value > max) severity = "slightlyHigh";
+  else severity = "ideal";
+
+  function softmax(text) {
+    return `<br><br><strong>Softmaxxing:</strong> ${text}`;
+  }
+
+  function hardmax(text) {
+    return `<br><strong>Hardmaxxing:</strong> ${text}`;
+  }
+
+  switch(key) {
+
+    case "FWHR":
+
+      if (severity === "ideal")
+        return `
+FWHR falls within optimal structural range. 
+This suggests balanced transverse facial width relative to midface height. 
+Dominance perception and skeletal compactness are aligned with high aesthetic standards.
+<br><br><strong>No structural looksmaxxing required.</strong>
+        `;
+
+      if (severity === "slightlyLow")
+        return `
+FWHR is mildly reduced. 
+Facial width is slightly narrow relative to height. 
+This can reduce perceived dominance and skeletal robustness.
+${softmax("Grow lateral beard width, increase body mass, optimize lighting angles.")}
+${hardmax("Zygomatic widening implants or jaw angle augmentation.")}
+        `;
+
+      if (severity === "veryLow")
+        return `
+Significantly low FWHR. 
+Marked vertical elongation relative to width. 
+Common in softer facial structures.
+${softmax("Strategic beard shaping to widen lower third.")}
+${hardmax("Zygomatic implants combined with mandibular expansion.")}
+        `;
+
+      if (severity === "slightlyHigh")
+        return `
+FWHR slightly elevated. 
+Indicates strong transverse width. 
+Often associated with higher dominance signaling.
+No intervention required unless facial harmony is compromised.
+        `;
+
+      if (severity === "veryHigh")
+        return `
+Extremely high FWHR. 
+Facial width strongly exceeds vertical proportion. 
+May appear compressed vertically.
+${softmax("Hair volume increase to elongate face visually.")}
+        `;
+      break;
+
+    case "midface":
+
+      if (severity === "ideal")
+        return `
+Midface proportion is balanced relative to total facial height.
+Maintains compact vertical thirds and structural harmony.
+<br><br><strong>No looksmaxxing required.</strong>
+        `;
+
+      if (severity === "slightlyLow")
+        return `
+Midface is slightly shortened.
+Can give youthful but occasionally underdeveloped appearance.
+${softmax("Neutral head tilt in photos to elongate visually.")}
+        `;
+
+      if (severity === "slightlyHigh")
+        return `
+Midface slightly elongated.
+Reduces facial compactness.
+${softmax("Hairstyle lowering forehead exposure.")}
+${hardmax("Orthognathic surgery (Lefort I with CCW rotation).")}
+        `;
+
+      if (severity === "veryHigh")
+        return `
+Severely elongated midface.
+Significant vertical disproportion.
+${hardmax("Orthognathic repositioning with vertical impaction.")}
+        `;
+      break;
+
+    case "jawToCheekbone":
+
+      if (severity === "ideal")
+        return `
+Jaw-to-cheekbone ratio indicates balanced mandibular width relative to zygomatic projection.
+Strong structural masculinity signal.
+<br><br><strong>No jaw enhancement required.</strong>
+        `;
+
+      if (severity === "slightlyLow")
+        return `
+Mandibular width slightly underdeveloped relative to cheekbones.
+${softmax("Masseter hypertrophy training, low body fat.")}
+${hardmax("Jaw angle implants.")}
+        `;
+
+      if (severity === "veryLow")
+        return `
+Significant jaw deficiency relative to midface width.
+Structural imbalance likely noticeable.
+${hardmax("Mandibular angle implants or wraparound augmentation.")}
+        `;
+      break;
+
+    case "noseToFaceWidth":
+
+      if (severity === "ideal")
+        return `
+Nasal width proportion is aligned with facial transverse dimension.
+No refinement required.
+        `;
+
+      if (severity === "slightlyHigh")
+        return `
+Nasal base slightly wide relative to face.
+${softmax("Contouring, lighting control.")}
+${hardmax("Alar base reduction.")}
+        `;
+
+      if (severity === "veryHigh")
+        return `
+Excessive nasal base width.
+Dominant central facial feature.
+${hardmax("Alar base reduction with tip refinement.")}
+        `;
+      break;
+
+  }
+   if (key === "cheekboneRatio") {
+
+    if (severity === "ideal")
+      return `
+Cheekbone projection relative to facial height is balanced.
+Midface structure supports strong skeletal aesthetics.
+<br><br><strong>No enhancement required.</strong>
+      `;
+
+    if (severity === "slightlyLow")
+      return `
+Cheekbone projection is mildly underdeveloped relative to facial height.
+${softmax("Low body fat, lighting emphasizing lateral shadows.")}
+${hardmax("Malar or infraorbital rim implants.")}
+      `;
+
+    if (severity === "veryLow")
+      return `
+Flat midface with reduced transverse projection.
+Structural support appears diminished.
+${hardmax("Custom malar + infraorbital augmentation.")}
+      `;
+
+    if (severity === "slightlyHigh")
+      return `
+Prominent zygomatic projection.
+Can enhance sharpness if harmonious.
+No correction required.
+      `;
+
+    if (severity === "veryHigh")
+      return `
+Excessive cheekbone width relative to height.
+May appear exaggerated if jaw is weak.
+${softmax("Grow jaw mass or facial hair to rebalance lower third.")}
+      `;
+  }
+
+  /* ============================= */
+  /* INTERCANTHAL RATIO */
+  /* ============================= */
+
+  if (key === "intercanthalRatio") {
+
+    if (severity === "ideal")
+      return `
+Intercanthal spacing aligns proportionally with eye width.
+Balanced orbital positioning.
+<br><br><strong>No adjustment needed.</strong>
+      `;
+
+    if (severity === "slightlyLow")
+      return `
+Eyes slightly close-set.
+Can increase intensity but reduce softness.
+${softmax("Hairstyle widening forehead visually.")}
+      `;
+
+    if (severity === "slightlyHigh")
+      return `
+Eyes slightly wide-set.
+May reduce central facial compactness.
+${softmax("Nasal bridge contouring emphasis.")}
+      `;
+  }
+
+  /* ============================= */
+  /* EYE TO FACE WIDTH */
+  /* ============================= */
+
+  if (key === "eyeToFaceWidth") {
+
+    if (severity === "ideal")
+      return `
+Ocular width proportion matches facial transverse dimension.
+Balanced eye dominance.
+      `;
+
+    if (severity === "slightlyLow")
+      return `
+Eyes appear smaller relative to facial width.
+${softmax("Squint training, under-eye filler, lighting optimization.")}
+      `;
+
+    if (severity === "slightlyHigh")
+      return `
+Eyes relatively large compared to face.
+Often perceived as youthful.
+No correction required unless harmony affected.
+      `;
+  }
+
+  /* ============================= */
+  /* MOUTH TO FACE WIDTH */
+  /* ============================= */
+
+  if (key === "mouthToFaceWidth") {
+
+    if (severity === "ideal")
+      return `
+Oral width proportion aligns with facial width.
+Balanced lower facial thirds.
+      `;
+
+    if (severity === "slightlyLow")
+      return `
+Narrow mouth relative to face width.
+${softmax("Lip hydration + corner lift expression training.")}
+${hardmax("Lip lift or corner lift surgery.")}
+      `;
+
+    if (severity === "slightlyHigh")
+      return `
+Wide oral width.
+Often perceived as expressive and dominant.
+No structural intervention required.
+      `;
+  }
+
+  /* ============================= */
+  /* PHILTRUM RATIO */
+  /* ============================= */
+
+  if (key === "philtrumRatio") {
+
+    if (severity === "ideal")
+      return `
+Philtrum length proportion is balanced relative to lower third.
+Maintains facial compactness.
+      `;
+
+    if (severity === "slightlyHigh")
+      return `
+Mildly elongated philtrum.
+Reduces perceived youthfulness.
+${softmax("Facial hair masking.")}
+${hardmax("Subnasal lip lift.")}
+      `;
+
+    if (severity === "veryHigh")
+      return `
+Significantly elongated philtrum.
+Major contributor to lower third disproportion.
+${hardmax("Subnasal lip lift surgery.")}
+      `;
+  }
+
+  /* ============================= */
+  /* LIP HEIGHT RATIO */
+  /* ============================= */
+
+  if (key === "lipHeightRatio") {
+
+    if (severity === "ideal")
+      return `
+Lip vertical proportion is balanced.
+Supports ideal lower third aesthetics.
+      `;
+
+    if (severity === "slightlyLow")
+      return `
+Thin lips relative to mouth width.
+${softmax("Lip hydration, subtle filler.")}
+      `;
+
+    if (severity === "slightlyHigh")
+      return `
+Full lips relative to mouth width.
+Often perceived as attractive.
+No enhancement required.
+      `;
+  }
+
+  /* ============================= */
+  /* EYE SPACING RATIO */
+  /* ============================= */
+
+  if (key === "eyeSpacingRatio") {
+
+    if (severity === "ideal")
+      return `
+Eye spacing relative to facial width is balanced.
+Supports orbital harmony.
+      `;
+
+    if (severity === "slightlyLow")
+      return `
+Eyes closer to midline.
+Can intensify gaze.
+      `;
+
+    if (severity === "slightlyHigh")
+      return `
+Eyes spaced wider relative to face.
+May reduce compactness.
+      `;
+  }
+
+  /* ============================= */
+  /* CHIN HEIGHT RATIO */
+  /* ============================= */
+
+  if (key === "chinHeightRatio") {
+
+    if (severity === "ideal")
+      return `
+Chin vertical proportion aligns with facial thirds.
+Balanced mandibular projection.
+      `;
+
+    if (severity === "slightlyLow")
+      return `
+Short chin vertically.
+${softmax("Beard lengthening illusion.")}
+${hardmax("Sliding genioplasty.")}
+      `;
+
+    if (severity === "veryLow")
+      return `
+Significant chin deficiency.
+Major lower third imbalance.
+${hardmax("Sliding genioplasty or chin wing implant.")}
+      `;
+  }
+
+  /* ============================= */
+  /* SYMMETRY */
+  /* ============================= */
+
+  if (key === "symmetry") {
+
+    if (severity === "ideal")
+      return `
+Facial asymmetry falls within normal anatomical variance.
+No correction necessary.
+      `;
+
+    if (severity === "slightlyHigh")
+      return `
+Mild asymmetry detected.
+Common in general population.
+${softmax("Hairline balancing, beard shaping.")}
+      `;
+
+    if (severity === "veryHigh")
+      return `
+Pronounced asymmetry.
+Noticeable structural imbalance.
+${hardmax("Orthognathic or filler-based correction.")}
+      `;
+  }
+
+  if (severity === "ideal")
+    return "Within optimal aesthetic range. No looksmaxxing necessary.";
+
+  if (severity === "slightlyLow")
+    return "Mildly below ideal range. Minor proportional deviation.";
+
+  if (severity === "slightlyHigh")
+    return "Mildly above ideal range. Slight proportional exaggeration.";
+
+  if (severity === "veryLow")
+    return "Significantly below ideal structural range.";
+
+  if (severity === "veryHigh")
+    return "Significantly above ideal structural range.";
+
+}
+
+function normalCDF(x, mean=5, std=1.414) {
+  const z = (x - mean) / std;
+  return 0.5 * (1 + erf(z / Math.sqrt(2)));
+}
+
+// Error function approximation
+function erf(x) {
+  const sign = x >= 0 ? 1 : -1;
+  x = Math.abs(x);
+
+  const a1 =  0.254829592;
+  const a2 = -0.284496736;
+  const a3 =  1.421413741;
+  const a4 = -1.453152027;
+  const a5 =  1.061405429;
+  const p  =  0.3275911;
+
+  const t = 1 / (1 + p * x);
+  const y = 1 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) *
+            t * Math.exp(-x * x);
+
+  return sign * y;
+}
+
+
+
+function drawGraph(score) {
+
+  gctx.clearRect(0,0,650,260);
+
+  const mean = 5;
+  const std = 1.414;
+
+  // Axis line
+  gctx.strokeStyle="#444";
+  gctx.beginPath();
+  gctx.moveTo(40,220);
+  gctx.lineTo(610,220);
+  gctx.stroke();
+
+  // Draw bell curve
+  gctx.strokeStyle="#00ff6a";
+  gctx.lineWidth = 2;
+  gctx.beginPath();
+
+  for(let x=0;x<=10;x+=0.05){
+    let px=40+(x/10)*570;
+    let y=Math.exp(-Math.pow(x-mean,2)/(2*std*std));
+    let py=220-(y*150);
+    if(x===0) gctx.moveTo(px,py);
+    else gctx.lineTo(px,py);
+  }
+
+  gctx.stroke();
+
+  // Your position
+  let ux=40+(score/10)*570;
+  let y=Math.exp(-Math.pow(score-mean,2)/(2*std*std));
+  let uy=220-(y*150);
+
+  gctx.fillStyle="red";
+  gctx.beginPath();
+  gctx.arc(ux,uy,7,0,Math.PI*2);
+  gctx.fill();
+
+  gctx.fillStyle="white";
+  gctx.fillText("YOU",ux-12,uy-12);
+
+  // Percentile math
+  const percentile = normalCDF(score, mean, std) * 100;
+  const oneIn = percentile === 100 ? "∞" :
+                Math.round(100 / (100 - percentile + 0.0001));
+
+  // Store for click detection
+  graph.userPoint = {x: ux, y: uy, score, percentile, oneIn};
+
+  // Draw percentile ticks below
+  gctx.fillStyle="#888";
+  gctx.font="12px Arial";
+
+  for(let p of [0,10,25,50,75,90,100]) {
+    let xVal = mean + std * Math.sqrt(2) * inverseErf((p/100)*2-1);
+    let px = 40 + (Math.max(0,Math.min(10,xVal))/10)*570;
+    gctx.fillText(p+"%", px-10, 240);
+  }
+}
+
+function inverseErf(x) {
+  const a = 0.147;
+  const ln = Math.log(1 - x*x);
+  const part1 = 2/(Math.PI*a) + ln/2;
+  const part2 = ln/a;
+  return Math.sign(x) * Math.sqrt(Math.sqrt(part1*part1 - part2) - part1);
+}
+
+graph.addEventListener("click", function (e) {
+
+  if (!graph.userPoint) return;
+
+  const rect = graph.getBoundingClientRect();
+
+  const scaleX = graph.width / rect.width;
+  const scaleY = graph.height / rect.height;
+
+  const mx = (e.clientX - rect.left) * scaleX;
+  const my = (e.clientY - rect.top) * scaleY;
+
+  const dx = mx - graph.userPoint.x;
+  const dy = my - graph.userPoint.y;
+
+  if (Math.sqrt(dx * dx + dy * dy) < 15) {
+
+    const p = graph.userPoint.percentile.toFixed(2);
+    const oneIn = graph.userPoint.oneIn;
+
+    alert(
+      `You are in the ${p} percentile.\n\n` +
+      `Approximately 1 in ${oneIn} people score higher than you.`
+    );
+  }
+});
+
+
+canvas.addEventListener("mousedown", function(e) {
+  const rect = canvas.getBoundingClientRect();
+  const mouseX = e.clientX - rect.left;
+  const mouseY = e.clientY - rect.top;
+
+  draggingPoint = null;
+
+  for (let i = 0; i < points.length; i++) {
+    const dx = mouseX - points[i].x;
+    const dy = mouseY - points[i].y;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+
+    if (distance < 10) { // bigger hitbox
+      draggingPoint = i;
+      break;
+    }
+  }
+});
+
+canvas.addEventListener("mousemove", function(e) {
+  if (draggingPoint !== null) {
+    const rect = canvas.getBoundingClientRect();
+    points[draggingPoint].x = e.clientX - rect.left;
+    points[draggingPoint].y = e.clientY - rect.top;
+    drawPoints();
+  }
+});
+
+canvas.addEventListener("mouseup", function() {
+  draggingPoint = null;
+});
+
+canvas.addEventListener("mouseleave", function() {
+  draggingPoint = null;
+});
+
+function drawPoints() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(img, 0, 0);
+
+  points.forEach((p, i) => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, 5, 0, Math.PI * 2);
+    ctx.fillStyle = "blue";
+    ctx.fill();
+    ctx.strokeStyle = "lime";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    ctx.fillStyle = "white";
+    ctx.font = "bold 14px Arial";
+    ctx.fillText(i + 1, p.x + 8, p.y - 8);
+  });
+}
+
+function updateProgress() {
+const percent = (currentMarker / markerLabels.length) * 100;
+progressBar.style.width = percent + "%";
+}
+
+function startPlacing() {
+points = [];
+currentMarker = 0;
+instructions.classList.add("visible");
+instructions.innerText = `Click on: ${markerLabels[currentMarker]} (${currentMarker + 1}/${markerLabels.length})`;
+metrics.classList.add("visible");
+metrics.innerHTML = "<p>Click points in order. Zoom in browser if needed. ESC to cancel.</p>";
+resetBtn.style.display = "inline-block";
+undoBtn.style.display = "inline-block";
+startBtn.style.display = "none";
+updateProgress();
+
+canvas.onclick = (e) => {
+const rect = canvas.getBoundingClientRect();
+const scaleX = canvas.width / rect.width;
+const scaleY = canvas.height / rect.height;
+const x = (e.clientX - rect.left) * scaleX;
+const y = (e.clientY - rect.top) * scaleY;
+points.push({x, y});
+currentMarker++;
+drawPoints();
+updateProgress();
+if (currentMarker < markerLabels.length) {
+instructions.innerText = `Click on: ${markerLabels[currentMarker]} (${currentMarker + 1}/${markerLabels.length})`;
+} else {
+instructions.innerText = "All points placed! Crunching numbers...";
+canvas.onclick = null;
+setTimeout(calculateResults, 200); // small delay for smooth feel
+}
+};
+}
+
+function undoLast() {
+if (points.length === 0) return;
+points.pop();
+currentMarker--;
+drawPoints();
+updateProgress();
+if (currentMarker < markerLabels.length) {
+instructions.innerText = `Click on: ${markerLabels[currentMarker]} (${currentMarker + 1}/${markerLabels.length})`;
+}
+}
+
+
+
+function calculateHarmony(values, idealRanges) {
+
+const keys = [
+  "FWHR",
+  "midface",
+  "lowerThirdPct",
+  "philtrumRatio",
+  "chinHeightRatio",
+  "intercanthalRatio",
+  "eyeSpacingRatio",
+  "eyeToFaceWidth",
+  "mouthToFaceWidth",
+  "foreheadHeightRatio",
+  "symmetry",
+  "browSymmetryRatio",
+  "eyeTiltSymmetryRatio"
+];
+
+  let total = 0;
+  let count = 0;
+
+  keys.forEach(key => {
+    const r = idealRanges[key];
+    const value = values[key];
+    if (!r || value == null) return;
+
+    const midpoint = (r.min + r.max) / 2;
+    const halfRange = (r.max - r.min) / 2;
+
+    // Softer deviation model
+    const deviation = (value - midpoint) / (halfRange * 1.6);
+
+    const normalized = Math.exp(-Math.pow(deviation, 2));
+
+    total += normalized;
+    count++;
+  });
+
+  if (count === 0) return 0;
+
+  
+
+  // Realistic uplift (harmonious faces cluster high)
+  let score = (total / count) * 10;
+score = Math.pow(score / 10, 1.3) * 10; // compress highs
+return Math.min(9, score);
+}
+function calculateDimorphism(values, idealRanges) {
+
+const keys = [
+  "FWHR",
+  "jawToCheekbone",
+  "cheekboneRatio",
+  "noseToFaceWidth",
+  "chinPhil",
+  "lowerThirdPct",
+  "chinHeightRatio",
+  "mandibleAngleRatio",
+  "browRidgeRatio",
+  "noseProjectionRatio",
+  "lowerFaceWidthRatio",
+  "chinWidthRatio"
+];
+
+  let total = 0;
+  let count = 0;
+
+  keys.forEach(key => {
+
+    const r = idealRanges[key];
+    const value = values[key];
+    if (!r || value == null) return;
+
+    const midpoint = (r.min + r.max) / 2;
+    const halfRange = (r.max - r.min) / 2;
+
+    const deviation = (value - midpoint) / halfRange;
+
+    // Softer curve than exp(-x²)
+    const baseScore = 1 / (1 + Math.abs(deviation));
+
+    // Stronger masculine bias
+    let bias = 1;
+    if (deviation > 0) bias = 1.25;     // reward masculine skew
+    if (deviation > 1) bias = 1.35;     // strong masculine
+    if (deviation < -1) bias = 0.85;    // penalize feminine skew
+
+    const score = baseScore * bias;
+
+    total += Math.min(score, 1.2); // allow slight overcap
+    count++;
+
+  });
+
+  if (count === 0) return 0;
+
+  // Normalize properly
+  const final = (total / count);
+
+  return Math.min(10, final * 10);
+}
+function calculateAngularity(values, idealRanges) {
+
+  const keys = [
+  "jawToCheekbone",
+  "cheekboneRatio",
+  "chinHeightRatio",
+  "FWHR",
+  "mandibleAngleRatio",
+  "jawCurveRatio",
+  "cheekHollowRatio",
+  "infraorbitalRatio",
+  "orbitalWidthRatio",
+  "compactnessRatio"
+];
+
+  let total = 0;
+  let count = 0;
+
+  keys.forEach(key => {
+    const r = idealRanges[key];
+    const value = values[key];
+    if (!r || value == null) return;
+
+    const midpoint = (r.min + r.max) / 2;
+    const range = (r.max - r.min);
+
+    // normalize relative to midpoint
+    let normalized = (value - midpoint) / (range / 2);
+
+    // clamp between -1 and 1
+    normalized = Math.max(-1, Math.min(normalized, 1));
+
+    // reward upper half more aggressively
+    if (normalized > 0) {
+      normalized = Math.pow(normalized, 1.3);
+    } else {
+      normalized = normalized * 0.6; // soften penalty
+    }
+
+    // convert from -1..1 → 0..1
+    normalized = (normalized + 1) / 2;
+
+    total += normalized;
+    count++;
+  });
+
+  if (count === 0) return 0;
+
+  // map to realistic range
+  let score = (total / count) * 10;
+
+  // slight compression so not everyone hits 8+
+  score = 3 + (score * 0.7);
+
+  return Math.min(9.5, score);
+}
+function calculateResults() {
+ 
+if (points.length < markerLabels.length) {
+instructions.innerText = "You missed some points — undo or reset";
+return;
+}
+
+try {
+const chin = points[0];
+const leftZyg = points[1];
+const rightZyg = points[2];
+const glabella = points[3];
+const subnasale = points[4];
+const leftIris = points[5];
+const rightIris = points[6];
+const leftEyeOuter = points[7];
+const leftEyeInner = points[8];
+const rightEyeOuter = points[9];
+const rightEyeInner = points[10];
+const upperLip = points[11];
+const philtrumTop = points[12];
+
+const bizygomatic = distance(leftZyg, rightZyg);
+const ipd = distance(leftIris, rightIris);
+const midfaceHeight = upperLip.y - glabella.y;
+const lowerThirdHeight = chin.y - upperLip.y;
+const totalHeight = chin.y - glabella.y;
+
+if (midfaceHeight <= 0 || totalHeight <= 0) throw new Error("Bad points");
+
+const FWHR = bizygomatic / midfaceHeight;
+const midfaceRatio = ipd / midfaceHeight;
+const ESR = ipd / bizygomatic;
+
+const chinPhil = lowerThirdHeight / (upperLip.y - philtrumTop.y);
+
+
+const leftTilt = Math.atan2(
+  leftEyeOuter.y - leftEyeInner.y,
+  leftEyeOuter.x - leftEyeInner.x
+);
+
+const rightTilt = Math.atan2(
+  rightEyeOuter.y - rightEyeInner.y,
+  rightEyeOuter.x - rightEyeInner.x
+);
+
+let avgTiltRad = (leftTilt + rightTilt) / 2;
+let canthalTilt = degrees(avgTiltRad);
+
+// Normalize to 0–180 range
+if (canthalTilt < 0) {
+  canthalTilt = 180 + canthalTilt;
+}
+const eyeAspect = ((distance(leftEyeOuter, leftEyeInner) / distance(points[18], points[19])) +
+(distance(rightEyeOuter, rightEyeInner) / distance(points[21], points[22]))) / 2;
+const lowerThirdPct = (lowerThirdHeight / totalHeight) * 100;
+const cheekboneRatio = bizygomatic / totalHeight;
+// NEW RATIOS
+
+const intercanthal = distance(leftEyeInner, rightEyeInner);
+const eyeWidthAvg = (distance(leftEyeOuter, leftEyeInner) + distance(rightEyeOuter, rightEyeInner)) / 2;
+const mouthWidth = distance(points[16], points[17]);
+const noseWidth = distance(points[22], points[23]);
+const jawWidth = distance(points[24], points[25]);
+const browWidth = distance(points[13], points[14]);
+const noseHeight = distance(points[26], subnasale);
+const philtrumLength = distance(philtrumTop, upperLip);
+
+const faceWidth = bizygomatic;
+const faceHeight = totalHeight;
+
+// 1
+const intercanthalRatio = intercanthal / eyeWidthAvg;
+
+// 2
+const eyeToFaceWidth = eyeWidthAvg / faceWidth;
+
+// 3
+const noseToFaceWidth = noseWidth / faceWidth;
+
+// 4
+const mouthToFaceWidth = mouthWidth / faceWidth;
+
+// 5
+const jawToCheekbone = jawWidth / bizygomatic;
+
+// 6
+
+
+// 7
+const philtrumRatio = philtrumLength / lowerThirdHeight;
+
+// 8
+const lipHeightRatio = distance(points[32], points[33]) / mouthWidth;
+
+// 9
+
+// 10
+
+
+// 11
+const eyeSpacingRatio = intercanthal / faceWidth;
+
+// 12
+const chinHeightRatio = lowerThirdHeight / faceHeight;
+
+
+// 13
+const earFlareRatio = distance(points[30], points[31]) / faceWidth;
+
+// 14
+const browThicknessRatio =
+  (distance(points[13], points[34]) +
+   distance(points[14], points[35])) / 2 / faceHeight;
+
+// 15
+const browEyeRatio =
+  (distance(points[13], points[18]) +
+   distance(points[14], points[20])) / 2 / faceHeight;
+
+// 16
+const noseProjectionRatio =
+  distance(points[15], points[26]) / faceHeight;
+
+// 17
+const lowerFaceWidthRatio = jawWidth / faceWidth;
+
+// 18
+const foreheadHeightRatio =
+  distance(points[36], glabella) / faceHeight; // needs hairline marker
+
+// 19
+const browSymmetryRatio =
+  Math.abs(points[13].y - points[14].y) / faceHeight;
+
+// 20
+const eyeVerticalRatio =
+  (distance(points[18], points[19]) +
+   distance(points[20], points[21])) / 2 /
+   eyeWidthAvg;
+
+// 21
+const noseLengthRatio =
+  distance(points[26], subnasale) / faceHeight;
+
+// 22
+const mouthHeightRatio =
+  distance(points[11], points[32]) / faceHeight;
+
+// 23
+const cupidBowRatio =
+  distance(points[12], points[11]) / faceHeight;
+
+// 24
+const infraorbitalRatio =
+  (distance(points[27], points[18]) +
+   distance(points[28], points[20])) / 2 /
+   faceHeight;
+
+// 25
+const cheekHollowRatio =
+  (distance(points[27], leftZyg) +
+   distance(points[28], rightZyg)) / 2 /
+   faceHeight;
+
+// 26
+const chinWidthRatio =
+  distance(points[37], points[38]) / faceWidth;
+
+// 27
+const compactnessRatio =
+  faceWidth / faceHeight;
+
+// 28
+const eyeTiltSymmetryRatio =
+  Math.abs(degrees(leftTilt) - degrees(rightTilt));
+
+// 29
+const jawCurveRatio =
+  distance(points[24], chin) / distance(points[24], points[25]);
+
+// 30
+const orbitalWidthRatio =
+  (distance(points[7], points[8]) +
+   distance(points[9], points[10])) / 2 /
+   faceWidth;
+
+// 31
+const browRidgeRatio =
+  (distance(points[13], points[26]) +
+   distance(points[14], points[26])) / 2 /
+   faceHeight;
+// 13
+
+
+// 14
+
+
+// 15
+const symmetry = Math.abs(
+  distance(leftZyg, glabella) - distance(rightZyg, glabella)
+) / faceWidth;
+
+const scores = {
+FWHR: strictRangeScore(FWHR, idealRanges.FWHR.min, idealRanges.FWHR.max),
+midface: strictRangeScore(midfaceRatio, idealRanges.midface.min, idealRanges.midface.max),
+ESR: strictRangeScore(ESR, idealRanges.ESR.min, idealRanges.ESR.max),
+chinPhil: strictRangeScore(chinPhil, idealRanges.chinPhil.min, idealRanges.chinPhil.max),
+canthalTilt: strictRangeScore(canthalTilt, idealRanges.canthalTilt.min, idealRanges.canthalTilt.max),
+eyeAspect: strictRangeScore(eyeAspect, idealRanges.eyeAspect.min, idealRanges.eyeAspect.max),
+lowerThirdPct: strictRangeScore(lowerThirdPct, idealRanges.lowerThirdPct.min, idealRanges.lowerThirdPct.max),
+cheekboneRatio: strictRangeScore(cheekboneRatio, idealRanges.cheekboneRatio.min, idealRanges.cheekboneRatio.max),
+intercanthalRatio: strictRangeScore(intercanthalRatio, idealRanges.intercanthalRatio.min, idealRanges.intercanthalRatio.max),
+eyeToFaceWidth: strictRangeScore(eyeToFaceWidth, idealRanges.eyeToFaceWidth.min, idealRanges.eyeToFaceWidth.max),
+noseToFaceWidth: strictRangeScore(noseToFaceWidth, idealRanges.noseToFaceWidth.min, idealRanges.noseToFaceWidth.max),
+mouthToFaceWidth: strictRangeScore(mouthToFaceWidth, idealRanges.mouthToFaceWidth.min, idealRanges.mouthToFaceWidth.max),
+jawToCheekbone: strictRangeScore(jawToCheekbone, idealRanges.jawToCheekbone.min, idealRanges.jawToCheekbone.max),
+philtrumRatio: strictRangeScore(philtrumRatio, idealRanges.philtrumRatio.min, idealRanges.philtrumRatio.max),
+lipHeightRatio: strictRangeScore(lipHeightRatio, idealRanges.lipHeightRatio.min, idealRanges.lipHeightRatio.max),
+eyeSpacingRatio: strictRangeScore(eyeSpacingRatio, idealRanges.eyeSpacingRatio.min, idealRanges.eyeSpacingRatio.max),
+chinHeightRatio: strictRangeScore(chinHeightRatio, idealRanges.chinHeightRatio.min, idealRanges.chinHeightRatio.max),
+symmetry: strictRangeScore(symmetry, idealRanges.symmetry.min, idealRanges.symmetry.max)
+
+};
+
+const weights = {
+  FWHR: 1.55,
+  midface: 1.31,
+  ESR: 0.33,
+  chinPhil: 0.92,
+  canthalTilt: 0.74,
+  eyeAspect: 0.09,
+  lowerThirdPct: 0.65,
+  cheekboneRatio: 0.84,
+  intercanthalRatio: 0.18,
+  eyeToFaceWidth: 0.28,
+  noseToFaceWidth: 0.65,
+  mouthToFaceWidth: 0.46,
+  jawToCheekbone: 0.83,
+  philtrumRatio: 0.54,
+  lipHeightRatio: 0.18,
+  eyeSpacingRatio: 0.28,
+  chinHeightRatio: 0.20,
+  symmetry: 0.50,
+   earFlareRatio: 0.25,
+  browThicknessRatio: 0.30,
+  browEyeRatio: 0.35,
+  noseProjectionRatio: 0.50,
+  mandibleAngleRatio: 0.70,
+  lowerFaceWidthRatio: 0.65,
+  foreheadHeightRatio: 0.40,
+  browSymmetryRatio: 0.45,
+  eyeVerticalRatio: 0.35,
+  noseLengthRatio: 0.45,
+  mouthHeightRatio: 0.30,
+  cupidBowRatio: 0.20,
+  infraorbitalRatio: 0.30,
+  cheekHollowRatio: 0.30,
+  chinWidthRatio: 0.45,
+  compactnessRatio: 0.50,
+  eyeTiltSymmetryRatio: 0.40,
+  jawCurveRatio: 0.60,
+  orbitalWidthRatio: 0.10,
+  browRidgeRatio: 0.20
+};
+const harmonyScore = calculateHarmony({
+  FWHR,
+  midface: midfaceRatio,
+  lowerThirdPct,
+  philtrumRatio,
+  chinHeightRatio,
+  intercanthalRatio,
+  eyeSpacingRatio,
+  eyeToFaceWidth,
+  mouthToFaceWidth,
+  foreheadHeightRatio,
+  symmetry,
+  browSymmetryRatio,
+  eyeTiltSymmetryRatio
+}, idealRanges);
+
+const dimorphismScore = calculateDimorphism({
+  FWHR,
+  jawToCheekbone,
+  cheekboneRatio,
+  noseToFaceWidth,
+  chinPhil,
+  lowerThirdPct,
+  chinHeightRatio,
+  browRidgeRatio,
+  noseProjectionRatio,
+  lowerFaceWidthRatio,
+  chinWidthRatio
+}, idealRanges);
+
+const angularityScore = calculateAngularity({
+  jawToCheekbone,
+  cheekboneRatio,
+  chinHeightRatio,
+  FWHR,
+  cheekHollowRatio,
+  infraorbitalRatio,
+  orbitalWidthRatio,
+  compactnessRatio
+}, idealRanges);
+
+renderSecondaryScores(harmonyScore, dimorphismScore, angularityScore);
+
+
+
+let total = 0;
+let wsum = 0;
+
+// Weighted aggregation
+for (let k in scores) {
+  if (weights[k] !== undefined && !isNaN(scores[k])) {
+    total += scores[k] * weights[k];
+    wsum += weights[k];
+  }
+}
+
+if (wsum === 0) {
+  console.error("Weight sum is zero. Check weights object.");
+  return;
+}
+
+// 0–1 normalized weighted average
+// 0–1 normalized weighted average
+let raw = total / wsum;
+raw = Math.max(0, Math.min(1, raw));
+
+// --- Distribution Control ---
+const center = 0.57;   // slightly stricter average anchor
+const spread = 5.4;    // lower spread = less inflation
+
+let z = (raw - center) * spread;
+
+// Logistic curve
+let logistic = 1 / (1 + Math.exp(-z));
+
+// Scale more conservatively
+// Previous: 1 + logistic * 8  (too generous)
+// New:      1.2 + logistic * 7.2
+
+let finalScore = 1.15+ logistic * 7;
+
+// Hard ceiling realism
+if (finalScore > 8.2) finalScore = 8.2;
+
+// Keep your realism tax
+if (finalScore < 6.5) finalScore = finalScore - 0.65;
+if (finalScore > 6.95) finalScore = finalScore + 1;
+
+finalScore = parseFloat(finalScore.toFixed(2));
+
+const cardScores = getCardScores({
+  finalScore,
+  harmony: harmonyScore,
+  dimorphism: dimorphismScore,
+  angularity: angularityScore,
+  cheekboneScore
+});
+
+renderFinalCard(cardScores);
+
+const ratioObject = {
+  FWHR,
+  midface: midfaceRatio,
+  ESR,
+  chinPhil,
+  canthalTilt,
+  eyeAspect,
+  lowerThirdPct,
+  cheekboneRatio,
+  intercanthalRatio,
+  eyeToFaceWidth,
+  noseToFaceWidth,
+  mouthToFaceWidth,
+  jawToCheekbone,
+  philtrumRatio,
+  lipHeightRatio,
+  eyeSpacingRatio,
+  chinHeightRatio,
+  symmetry,
+  earFlareRatio,
+  browThicknessRatio,
+  browEyeRatio,
+  noseProjectionRatio,
+  lowerFaceWidthRatio,
+  foreheadHeightRatio,
+  browSymmetryRatio,
+  eyeVerticalRatio,
+  noseLengthRatio,
+  mouthHeightRatio,
+  cupidBowRatio,
+  infraorbitalRatio,
+  cheekHollowRatio,
+  chinWidthRatio,
+  compactnessRatio,
+  eyeTiltSymmetryRatio,
+  jawCurveRatio,
+  orbitalWidthRatio,
+  browRidgeRatio
+};
+
+saveRatiosToFirestore(
+  ratioObject,
+  finalScore,
+  harmonyScore,
+  dimorphismScore,
+  angularityScore
+);
+
+
+// ur original metrics n ranges – assumin they defined somewhere bro, blackpill is u gotta plug em in
+// for demo, ill pretend vars like FWHR, idealRanges etc are set. u know the drill.
+
+// surgery section – i kept ur logic but mogged the html
+let surgery = "";
+let surgeryCount = 0;
+
+// all ur if checks here, but i made the output list items with classes for stylin
+if (FWHR < idealRanges.FWHR.min) { 
+  surgery += "<li class='sugg-item'>Low FWHR → zyg widening implants or jaw angle fillers</li>"; 
+  surgery += "<li class='sugg-item'>Custom zygomatic implants for midface width enhancement</li>"; 
+  surgeryCount += 2; 
+}
+if (FWHR > idealRanges.FWHR.max) { 
+  surgery += "<li class='sugg-item'>Buccal fat removal (if excess lower midface volume present)</li>"; 
+  surgeryCount++; 
+}
+if (midfaceRatio > idealRanges.midface.max) { 
+  surgery += "<li class='sugg-item'>Long midface → Lefort 1 + CCW rotation + rhino combo</li>"; 
+  surgery += "<li class='sugg-item'>Subnasal lip lift to reduce vertical midface appearance</li>"; 
+  surgeryCount += 2; 
+}
+if (canthalTilt < 88) { 
+  surgery += "<li class='sugg-item'>Negative tilt → canthoplasty + under-eye fat graft</li>"; 
+  surgery += "<li class='sugg-item'>Lateral canthoplasty for tilt correction</li>"; 
+  surgeryCount += 2; 
+}
+if (eyeAspect < idealRanges.eyeAspect.min) { 
+  surgery += "<li class='sugg-item'>Rounded eyes → lateral canthoplasty + bleph</li>"; 
+  surgeryCount++; 
+}
+if (lowerThirdPct < idealRanges.lowerThirdPct.min) { 
+  surgery += "<li class='sugg-item'>Short lower third → sliding genio + chin wing implant</li>"; 
+  surgeryCount++; 
+}
+if (cheekboneRatio < idealRanges.cheekboneRatio.min) { 
+  surgery += "<li class='sugg-item'>Flat cheeks → infraorbital rim + malar implants</li>"; 
+  surgery += "<li class='sugg-item'>Malar augmentation (implant or fat grafting)</li>"; 
+  surgeryCount += 2; 
+}
+if (ESR < idealRanges.ESR.min) { 
+  surgery += "<li class='sugg-item'>Wide-set eyes → orbital decompression or filler cope</li>"; 
+  surgeryCount++; 
+}
+if (chinPhil < idealRanges.chinPhil.min) { 
+  surgery += "<li class='sugg-item'>Long philtrum → lip lift + rhino base reduction</li>"; 
+  surgeryCount++; 
+}
+if (jawToCheekbone < idealRanges.jawToCheekbone.min) { 
+  surgery += "<li class='sugg-item'>Weak jaw relative to cheekbones → jaw angle implants</li>"; 
+  surgery += "<li class='sugg-item'>Mandibular angle implants for jaw width augmentation</li>"; 
+  surgeryCount += 2; 
+}
+if (jawToCheekbone > idealRanges.jawToCheekbone.max) { 
+  surgery += "<li class='sugg-item'>Masseter reduction (Botox or surgical contouring)</li>"; 
+  surgeryCount++; 
+}
+if (noseToFaceWidth > idealRanges.noseToFaceWidth.max) { 
+  surgery += "<li class='sugg-item'>Wide nose → alar base reduction</li>"; 
+  surgeryCount++; 
+}
+if (mouthToFaceWidth < idealRanges.mouthToFaceWidth.min) { 
+  surgery += "<li class='sugg-item'>Narrow mouth → lip lift + corner lift</li>"; 
+  surgeryCount++; 
+}
+if (symmetry > idealRanges.symmetry.max) { 
+  surgery += "<li class='sugg-item'>Facial asymmetry → filler balancing or surgical correction</li>"; 
+  surgeryCount++; 
+}
+if (chinHeightRatio < idealRanges.chinHeightRatio.min) { 
+  surgery += "<li class='sugg-item'>Sliding genioplasty for vertical chin lengthening</li>"; 
+  surgeryCount++; 
+}
+if (chinHeightRatio > idealRanges.chinHeightRatio.max) { 
+  surgery += "<li class='sugg-item'>Vertical reduction genioplasty</li>"; 
+  surgeryCount++; 
+}
+
+if (surgeryCount === 0) surgery += "<li class='sugg-item'>Halo status — no surgery needed, u moggin already bro</li>";
+
+// softmax section
+let softmax = "";
+
+if (symmetry > idealRanges.symmetry.max) {
+  softmax += "<li class='tip-item'>Use beard shadow or stubble to mask asymmetry</li>";
+  softmax += "<li class='tip-item'>Keep Hairs On Forehead Like A Meesy Fringw</li>";
+}
+if (jawToCheekbone < idealRanges.jawToCheekbone.min) {
+  softmax += "<li class='tip-item'>Grow thicker sideburns to create visual jaw width</li>";
+  softmax += "<li class='tip-item'>Slick Back Hairstyle With Sideburns Grown</li>";
+}
+if (eyeAspect < idealRanges.eyeAspect.min) {
+  softmax += "<li class='tip-item'>Use squinting eye expression (hunter eyes training)</li>";
+  softmax += "<li class='tip-item'>Keep eyebrows thicker</li>";
+}
+if (noseToFaceWidth > idealRanges.noseToFaceWidth.max) {
+  softmax += "<li class='tip-item'>Contouring or lighting from top-down to slim nose</li>";
+  softmax += "<li class='tip-item'>Sides Faded And Top Volumed with no hairs falling on forehead</li>";
+}
+if (FWHR < idealRanges.FWHR.min) 
+  softmax += "<li class='tip-item'>Use slightly longer top haircut with tighter sides to create perceived facial width</li>";
+if (FWHR > idealRanges.FWHR.max) 
+  softmax += "<li class='tip-item'>Avoid overly wide hairstyles — keep sides fuller to reduce horizontal exaggeration</li>";
+if (midfaceRatio > idealRanges.midface.max) 
+  softmax += "<li class='tip-item'>Higher cheek contour placement or subtle under-eye shadow can visually shorten midface</li>";
+if (philtrumRatio > idealRanges.philtrumRatio.max) 
+  softmax += "<li class='tip-item'>Light moustache shadow can visually shorten philtrum length</li>";
+if (chinHeightRatio < idealRanges.chinHeightRatio.min) 
+  softmax += "<li class='tip-item'>Grow light chin stubble to increase lower-third visual weight</li>";
+if (chinHeightRatio > idealRanges.chinHeightRatio.max) 
+  softmax += "<li class='tip-item'>Keep chin clean-shaven to avoid exaggerating vertical length</li>";
+if (eyeSpacingRatio < idealRanges.eyeSpacingRatio.min) 
+  softmax += "<li class='tip-item'>Avoid heavy inner brow grooming — maintain natural spacing illusion</li>";
+if (eyeSpacingRatio > idealRanges.eyeSpacingRatio.max) 
+  softmax += "<li class='tip-item'>Slight brow trimming toward center can visually reduce wide spacing</li>";
+if (intercanthalRatio < idealRanges.intercanthalRatio.min) 
+  softmax += "<li class='tip-item'>Use neutral lighting to avoid casting harsh inner-eye shadows</li>";
+if (lowerThirdPct > idealRanges.lowerThirdPct.max) 
+  softmax += "<li class='tip-item'>Shorter beard length can reduce elongated lower-third effect</li>";
+if (cheekboneRatio > idealRanges.cheekboneRatio.max) 
+  softmax += "<li class='tip-item'>Avoid overly hollow cheek lighting — it can exaggerate gaunt look</li>";
+if (mouthToFaceWidth < idealRanges.mouthToFaceWidth.min) 
+  softmax += "<li class='tip-item'>Smile training to increase visible mouth width in photos</li>";
+if (lipHeightRatio < idealRanges.lipHeightRatio.min) 
+  softmax += "<li class='tip-item'>Hydration + lip care to enhance natural lip volume</li>";
+if (ESR > idealRanges.ESR.max) 
+  softmax += "<li class='tip-item'>Slight squint expression reduces scleral exposure visually</li>";
+if (canthalTilt > idealRanges.canthalTilt.max) 
+  softmax += "<li class='tip-item'>Relax brow position to avoid overly forced angular expression</li>";
+
+if (softmax === "") 
+  softmax += "<li class='tip-item'>Maintain low body fat and good lighting — you're already optimized, halo effect mogs</li>";
+
+// now the full html with css – output this to document or console.log n paste to html file
+let fullHTML = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looksmaxxing Blackpill Analyzer - Mog or Rope</title>
+    <style>
+        /* dark theme slayin – black bg, white text, red accents for blackpill vibes */
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            animation: fadeInBody 1.5s ease-in-out;
+        }
+        @keyframes fadeInBody {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3); /* red glow for incel rage */
+            animation: pulseGlow 2s infinite alternate;
+        }
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.2); }
+            100% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.5); }
+        }
+        h1 {
+            text-align: center;
+            color: #ff4444; /* blood red for blackpill */
+            animation: slideIn 1s ease-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        h3 {
+            color: #ff7777;
+            border-bottom: 2px solid #ff4444;
+            padding-bottom: 10px;
+            animation: fadeIn 1s ease-in;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li.sugg-item, li.tip-item {
+            background: #282828;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: popIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        li.sugg-item:hover, li.tip-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #ff4444;
+        }
+        @keyframes popIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        /* stagger animations for list items */
+        li:nth-child(1) { animation-delay: 0.2s; }
+        li:nth-child(2) { animation-delay: 0.4s; }
+        li:nth-child(3) { animation-delay: 0.6s; }
+        /* and so on – add more if needed */
+        p strong {
+            color: #ff4444;
+        }
+        .intro {
+            text-align: center;
+            font-style: italic;
+            color: #bbbbbb;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Looksmaxxing Ascension Guide: Mog or Rope Edition</h1>
+        <p class="intro">Blackpill incoming bro: If ur ratios suck, surgerymaxx or softmaxx before its over. Halo if u slaying already lmao.</p>
+        
+        <h3>Surgery Recommendations (Hardmaxx to Chad Tier)</h3>
+        <ul>${surgery}</ul>
+        <p><strong>Total surgeries suggested: ${surgeryCount} – Ascend or LDAR?</strong></p>
+        
+        <h3>Softmaxxing Tips (Cope Till U Rope or Ascend)</h3>
+        <ul>${softmax}</ul>
+    </div>
+</body>
+</html>
+`;
+
+// to use: document.body.innerHTML = fullHTML; or console.log(fullHTML) n save as .html
+
+
+
+metrics.innerHTML = `
+<h3>Your Ratios:</h3>
+
+${sliderHTML("FWHR", FWHR, "FWHR")}
+${sliderHTML("Midface Ratio", midfaceRatio, "midface")}
+${sliderHTML("ESR", ESR, "ESR")}
+${sliderHTML("Chin:Philtrum", chinPhil,'chinPhil')}
+${sliderHTML("Canthal Tilt °", canthalTilt,'canthalTilt')}
+${sliderHTML("Eye Aspect Ratio", eyeAspect, "eyeAspect")}
+${sliderHTML("Lower Third %", lowerThirdPct, "lowerThirdPct")}
+${sliderHTML("Cheekbone Ratio", cheekboneRatio, "cheekboneRatio")}
+
+<hr>
+
+${sliderHTML("Intercanthal Ratio", intercanthalRatio, "intercanthalRatio")}
+${sliderHTML("Eye to Face Width", eyeToFaceWidth, "eyeToFaceWidth")}
+${sliderHTML("Nose to Face Width", noseToFaceWidth, "noseToFaceWidth")}
+${sliderHTML("Mouth to Face Width", mouthToFaceWidth, "mouthToFaceWidth")}
+${sliderHTML("Jaw to Cheekbone", jawToCheekbone, "jawToCheekbone")}
+${sliderHTML("Philtrum Ratio", philtrumRatio, "philtrumRatio")}
+${sliderHTML("Lip Height Ratio", lipHeightRatio, "lipHeightRatio")}
+${sliderHTML("Eye Spacing Ratio", eyeSpacingRatio, "eyeSpacingRatio")}
+${sliderHTML("Chin Height Ratio", chinHeightRatio, "chinHeightRatio")}
+${sliderHTML("Facial Symmetry", symmetry, "symmetry")}
+<hr>
+
+${sliderHTML("Ear Flare Ratio", earFlareRatio, "earFlareRatio")}
+${sliderHTML("Brow Thickness Ratio", browThicknessRatio, "browThicknessRatio")}
+${sliderHTML("Brow–Eye Distance Ratio", browEyeRatio, "browEyeRatio")}
+${sliderHTML("Nose Projection Ratio", noseProjectionRatio, "noseProjectionRatio")}
+${sliderHTML("Lower Face Width Ratio", lowerFaceWidthRatio, "lowerFaceWidthRatio")}
+${sliderHTML("Forehead Height Ratio", foreheadHeightRatio, "foreheadHeightRatio")}
+${sliderHTML("Brow Symmetry Ratio", browSymmetryRatio, "browSymmetryRatio")}
+${sliderHTML("Eye Vertical Openness", eyeVerticalRatio, "eyeVerticalRatio")}
+${sliderHTML("Nose Length Ratio", noseLengthRatio, "noseLengthRatio")}
+${sliderHTML("Mouth Height Ratio", mouthHeightRatio, "mouthHeightRatio")}
+${sliderHTML("Cupid's Bow Ratio", cupidBowRatio, "cupidBowRatio")}
+${sliderHTML("Infraorbital Depth Ratio", infraorbitalRatio, "infraorbitalRatio")}
+${sliderHTML("Cheek Hollow Ratio", cheekHollowRatio, "cheekHollowRatio")}
+${sliderHTML("Chin Width Ratio", chinWidthRatio, "chinWidthRatio")}
+${sliderHTML("Facial Compactness", compactnessRatio, "compactnessRatio")}
+${sliderHTML("Eye Tilt Symmetry", eyeTiltSymmetryRatio, "eyeTiltSymmetryRatio")}
+${sliderHTML("Jaw Curve Ratio", jawCurveRatio, "jawCurveRatio")}
+${sliderHTML("Orbital Width Ratio", orbitalWidthRatio, "orbitalWidthRatio")}
+${sliderHTML("Brow Ridge Ratio", browRidgeRatio, "browRidgeRatio")}
+
+<h2>SCORE: ${finalScore.toFixed(2)} / 10</h2>
+`;
+surgeryDiv.innerHTML = surgery + softmax;
+drawGraph(finalScore);
+instructions.innerText = "Done! Score calculated. Reset if you want another go.";
+} catch (err) {
+console.error(err);
+instructions.innerText = "Calc failed up — probably bad points. Undo last or reset.";
+}
+}
+const modal = document.getElementById("metricModal");
+const mgctx = document.getElementById("miniGraph").getContext("2d");
+
+function openMetric(key, value) {
+
+  const r = idealRanges[key];
+  if (!r) return;
+
+  const mean = (r.min + r.max) / 2;
+  const std = (r.max - r.min) / 2;
+
+  const z = (value - mean) / std;
+  const percentile = (0.5 * (1 + erf(z / Math.sqrt(2)))) * 100;
+
+  document.getElementById("metricTitle").innerText = key;
+  document.getElementById("metricValue").innerHTML =
+    `<strong>Your Value:</strong> ${value.toFixed(3)}`;
+
+  document.getElementById("metricPercentile").innerHTML =
+    `<strong>Percentile:</strong> ${percentile.toFixed(2)}%`;
+
+  document.getElementById("metricDescription").innerText =
+    getMetricExplanation(key, value);
+
+  drawMiniGraph(value, mean, std);
+
+  modal.style.display = "flex";
+}
+
+document.getElementById("closeMetric").onclick = () => {
+  modal.style.display = "none";
+};
+
+function drawMiniGraph(value, mean, std) {
+
+  mgctx.clearRect(0,0,450,220);
+
+  mgctx.strokeStyle="#ffd86b";
+  mgctx.beginPath();
+
+  for(let x=mean-3*std; x<=mean+3*std; x+=0.01) {
+
+    let px=((x-(mean-3*std))/(6*std))*420+15;
+    let y=Math.exp(-Math.pow(x-mean,2)/(2*std*std));
+    let py=180-(y*120);
+
+    if(x===mean-3*std) mgctx.moveTo(px,py);
+    else mgctx.lineTo(px,py);
+  }
+
+  mgctx.stroke();
+
+  let userX=((value-(mean-3*std))/(6*std))*420+15;
+
+  mgctx.fillStyle="red";
+  mgctx.beginPath();
+  mgctx.arc(userX,160,6,0,Math.PI*2);
+  mgctx.fill();
+}
+
+upload.addEventListener("change", (e) => {
+const file = e.target.files[0];
+if (!file) return;
+
+const reader = new FileReader();
+reader.onload = (ev) => {
+img = new Image();
+img.onload = () => {
+canvas.width = img.width;
+canvas.height = img.height;
+ctx.drawImage(img, 0, 0);
+startBtn.style.display = "inline-block";
+instructions.innerText = "Pic loaded! Click 'Start Placing Points' when ready. Zoom browser if needed.";
+};
+img.src = ev.target.result;
+};
+reader.readAsDataURL(file);
+});
+
+startBtn.onclick = startPlacing;
+
+undoBtn.onclick = undoLast;
+
+resetBtn.onclick = () => {
+points = [];
+currentMarker = 0;
+ctx.drawImage(img, 0, 0);
+progressBar.style.width = "0%";
+startPlacing();
+};
+
+
+function saveRatiosToFirestore(ratioObject, finalScore, harmony, dimorphism, angularity) {
+  
+
+  // Ask username (same ghetto prompt)
+  let username = prompt("Enter your username");
+  if (!username || username.trim() === "") {
+    alert("No name = no save. op or type something.");
+    return;
+  }
+  username = username.trim().toLowerCase().replace(/\s+/g, '_');
+
+  // Grab the file from your input id="upload"
+  const fileInput = document.getElementById("upload");
+  const file = fileInput.files[0];
+
+  if (!file) {
+    alert("Nigga upload a pic first, faceless = invisible on LB KEKW");
+    return;
+  }
+
+  // Convert image to base64 (old school but works)
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const base64Image = e.target.result;  // this is "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQ..."
+
+    // Check rough size (1MB doc limit, base64 ~1.33x bigger so aim <750KB original)
+    if (base64Image.length > 1000000) {  // ~1MB string
+      alert("Pic too fucking big bro, resize under 750KB or accept subhuman compression cope");
+      return;
+    }
+
+    const userData = {
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      username: username,
+      finalScore: finalScore,
+      harmony: harmony,
+      dimorphism: dimorphism,
+      angularity: angularity,
+      ratios: ratioObject,
+      faceBase64: base64Image,              // ← the pic lives here now nigga
+      lastUpdated: firebase.firestore.FieldValue.serverTimestamp()
+    };
+
+    db.collection("userRatios").doc(username).set(userData)
+      .then(() => {
+        console.log(`Saved ${username} with embedded face pixels`);
+        alert("Thanks Now You can see yourself on leaderboard");
+      })
+      .catch((error) => {
+        console.error("Firestore said no:", error);
+        if (error.code === 'failed-precondition' || error.message.includes('size')) {
+          alert("Doc too fat nigga, pic oversized or too many fields. Compress your face.");
+        } else {
+          alert("Save mogged hard. Cry or retry.");
+        }
+      });
+  };
+
+  reader.onerror = function() {
+    alert("FileReader mogged us, pic corrupted or sum shit.");
+  };
+
+  reader.readAsDataURL(file);  // magic line — turns file → base64
+}
+
+
+function renderSecondaryScores(harmony, dimorphism, angularity) {
+
+  const harmonyBar = document.getElementById("harmonyBar");
+  const dimorphismBar = document.getElementById("dimorphismBar");
+  const angularityBar = document.getElementById("angularityBar");
+document.getElementById("harmonyScore").innerText =
+  (typeof harmony === "number" && !isNaN(harmony))
+    ? harmony.toFixed(2)
+    : "0.00";
+
+document.getElementById("dimorphismScore").innerText =
+  (typeof dimorphism === "number" && !isNaN(dimorphism))
+    ? dimorphism.toFixed(2)
+    : "0.00";
+
+document.getElementById("angularityScore").innerText =
+  (typeof angularity === "number" && !isNaN(angularity))
+    ? angularity.toFixed(2)
+    : "0.00";
+    console.log("Harmony:", harmony, typeof harmony);
+console.log("Dimorphism:", dimorphism, typeof dimorphism);
+console.log("Angularity:", angularity, typeof angularity);
+
+  harmonyBar.style.width = (harmony * 10) + "%";
+  dimorphismBar.style.width = (dimorphism * 10) + "%";
+  angularityBar.style.width = (angularity * 10) + "%";
+}
+renderSecondaryScores(harmonyScore, dimorphismScore, angularityScore);
+
+function cheekboneScore(value, range) {
+  const midpoint = (range.min + range.max) / 2;
+  const halfRange = (range.max - range.min) / 2;
+
+  let normalized = (value - midpoint) / halfRange;
+  normalized = Math.max(-1, Math.min(normalized, 1));
+
+  return ((normalized + 1) / 2); // 0–1 scale
+}
+function getCardScores({
+  finalScore,
+  harmony,
+  dimorphism,
+  angularity,
+  cheekboneScore
+}) {
+  return {
+    overall: Math.round(finalScore * 10),
+    jawline: Math.round(angularity * 10),
+    cheekbones: Math.round(cheekboneScore * 10),
+    harmony: Math.round(harmony * 10),
+    masculinity: Math.round(dimorphism * 10)
+  };
+}
+function renderFinalCard(scores) {
+
+  document.getElementById("overallCard").innerText = scores.overall;
+  document.getElementById("jawlineCard").innerText = scores.jawline;
+  document.getElementById("cheekboneCard").innerText = scores.cheekbones;
+  document.getElementById("harmonyCard").innerText = scores.harmony;
+  document.getElementById("masculinityCard").innerText = scores.masculinity;
+
+}
+/* ===============================
+   TOTAL APPEAL CALCULATOR
+   =============================== */
+
+// ---- Height Scoring ----
+function heightScore(cm) {
+  if (cm < 150) return 3.5;
+  if (cm < 160) return 4.5;
+  if (cm < 168) return 5.5;
+  if (cm < 175) return 6.5;
+  if (cm < 182) return 7.5;
+  if (cm < 188) return 8.3;
+  if (cm < 195) return 9;
+  return 9.3; // soft cap
+}
+
+// ---- Body Type Scoring ----
+function bodyScore(type) {
+  switch (type) {
+    case "skinny": return 5;
+    case "skinnyfat": return 4.5;
+    case "lean": return 7;
+    case "aesthetic": return 8.5;
+    case "supermuscular": return 8;
+    case "fat": return 3.5;
+    default: return 5;
+  }
+}
+
+// ---- Main Appeal Calculator ----
+function totalAppeal(faceScore, heightCm, bodyType, social, money) {
+
+  const hScore = heightScore(heightCm);
+  const bScore = bodyScore(bodyType);
+
+  // Clamp user inputs 1–10
+  social = Math.max(1, Math.min(10, social));
+  money  = Math.max(1, Math.min(10, money));
+
+  let total =
+    (faceScore * 0.40) +
+    (hScore * 0.15) +
+    (bScore * 0.15) +
+    (social * 0.15) +
+    (money * 0.15);
+
+  // Soft diminishing returns above 8.5
+  if (total > 8.5) {
+    total = 8.5 + ((total - 8.5) * 0.7);
+  }
+
+  // Hard realistic cap
+  total = Math.min(9.7, total);
+
+  return total;
+}
+
+// ---- UI Trigger ----
+function calculateAppeal() {
+
+  // Replace this if you already store final face score somewhere
+  const faceScore = parseFloat(window.finalScore || 6);
+
+  const heightCm = parseFloat(document.getElementById("heightInput").value);
+  const bodyType = document.getElementById("bodyType").value;
+  const social   = parseFloat(document.getElementById("socialInput").value);
+  const money    = parseFloat(document.getElementById("moneyInput").value);
+
+  if (isNaN(heightCm) || isNaN(social) || isNaN(money)) {
+    document.getElementById("appealResult").innerHTML =
+      "<span style='color:red'>Please fill all fields correctly.</span>";
+    return;
+  }
+
+  const result = totalAppeal(faceScore, heightCm, bodyType, social, money);
+
+  // Tier Label
+  let tier = "";
+  if (result < 5) tier = "Below Average";
+  else if (result < 6.5) tier = "Average";
+  else if (result < 7.5) tier = "Attractive";
+  else if (result < 8.5) tier = "High Appeal";
+  else tier = "Elite Tier";
+
+  document.getElementById("appealResult").innerHTML =
+    `<h2>Total Appeal: ${result.toFixed(2)}/10</h2>
+     <p>${tier}</p>`;
+}
+
+document.addEventListener("keydown", e => {
+if (e.key === "Escape" && currentMarker > 0) {
+instructions.innerText = "Cancelled. Click Reset or upload again.";
+currentMarker = 0;
+points = [];
+ctx.drawImage(img, 0, 0);
+progressBar.style.width = "0%";
+canvas.onclick = null;
+}
+});
+
+function validateRatios(ratios, idealRanges) {
+
+  let hasError = false;
+
+  for (let key in ratios) {
+
+    const value = ratios[key];
+
+    // Check undefined or null
+    if (value === undefined || value === null) {
+      console.error(`❌ Missing value for: ${key}`);
+      hasError = true;
+      continue;
+    }
+
+    // Check NaN
+    if (isNaN(value)) {
+      console.error(`❌ NaN detected in: ${key}`);
+      hasError = true;
+      continue;
+    }
+
+    // Check if ideal range exists
+    if (!idealRanges[key]) {
+      console.error(`❌ Missing ideal range for: ${key}`);
+      hasError = true;
+      continue;
+    }
+
+  }
+
+  if (hasError) {
+    console.warn("⚠️ Fix the above errors before calculating.");
+    return false;
+  }
+
+  console.log("✅ All ratios valid. Safe to calculate.");
+  return true;
+}
+function loadLeaderboard() {
+  const db = firebase.firestore();
+
+  db.collection("userRatios")
+    .orderBy("finalScore", "desc")
+    .limit(50)
+    .get()
+    .then((snapshot) => {
+
+      const users = [];
+
+      snapshot.forEach(doc => {
+        const data = doc.data();
+
+        users.push({
+          id: doc.id,
+          username: data.username || doc.id || "Anonymous",
+          finalScore: typeof data.finalScore === "number" ? data.finalScore : 0
+        });
+      });
+
+      if (users.length === 0) return;
+
+      // Helper function to safely display podium user
+      function setPodium(positionIdName, positionIdScore, user) {
+        if (!user) return;
+        document.getElementById(positionIdName).innerText = user.username;
+        document.getElementById(positionIdScore).innerText = user.finalScore.toFixed(2);
+      }
+
+      // Top 3 safely
+      setPodium("firstName", "firstScore", users[0]);
+      setPodium("secondName", "secondScore", users[1]);
+      setPodium("thirdName", "thirdScore", users[2]);
+
+      // Rest of list
+      const listContainer = document.getElementById("rankList");
+      listContainer.innerHTML = "";
+
+      for (let i = 3; i < users.length; i++) {
+        const row = document.createElement("div");
+        row.className = "rank-row";
+
+        row.innerHTML = `
+          <span>#${i + 1} ${users[i].username}</span>
+          <span>${users[i].finalScore.toFixed(2)}</span>
+        `;
+
+        listContainer.appendChild(row);
+      }
+    })
+    .catch(error => {
+      console.error("Leaderboard error:", error);
+    });
+}
+
+    
+
+window.onload = function() {
+  loadLeaderboard();
+};
+</script>
+
+</body>
+</html>
